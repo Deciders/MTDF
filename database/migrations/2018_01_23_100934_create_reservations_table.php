@@ -19,10 +19,10 @@ class CreateReservationsTable extends Migration
             $table->date('end_date')->nullable();
             $table->integer('device_id')->unsigned();
             $table->foreign('device_id')->references('id')->on('devices')->onDelete('cascade');
-            $table->integer('noneleader_id')->unsigned();
-            $table->foreign('noneleader_id')->references('id')->on('noneleaders')->onDelete('cascade');
-            $table->integer('leader_id')->unsigned();
-            $table->foreign('leader_id')->references('id')->on('leaders')->onDelete('cascade');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+//            $table->integer('leader_id')->unsigned();
+//            $table->foreign('leader_id')->references('id')->on('leaders')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -25,7 +25,7 @@ Route::put('/deviceType/edit/{id}','DeviceTypeController@editDeviceType');
 // for android login
 
 Route::get('/login/user/{id}/pwd/{pass}','log@login');
-//Route::post('/login/user','log@login');
+
 //device controller apis
 Route::resource('device','DeviceController');
 Route::resource('reservation','reservationController');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Device;
+use Illuminate\Support\Facades\DB;
 class DeviceController extends Controller
 {
     /**
@@ -61,14 +62,21 @@ class DeviceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        $item= Device::find($id);
-        if(!$item){
-            return response()->json(['msg'=>"Item not found"],404);
-        }else{
-            $Item= Device::find($id);
-            return response()->json(['allitem'=>$Item],200);
-        }
+    {      $item = DB::table('devices')->where('device_type_id', $id)->get();
+
+           if($item==null){
+               return response()->json(['msg'=>'item not founr'],200);
+           }
+           return response()->json(['allitem'=>$item],200);
+
+
+//        $item= Device::find($id);
+//        if(!$item){
+//            return response()->json(['msg'=>"Item not found"],404);
+//        }else{
+//            $Item= Device::find($id);
+//            return response()->json(['allitem'=>$Item],200);
+//        }
     }
 
     /**
