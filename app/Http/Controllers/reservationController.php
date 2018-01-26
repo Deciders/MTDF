@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use\App\Models\Reservation;
+use Illuminate\Support\Facades\Auth;
 class reservationController extends Controller
 {
     /**
@@ -35,14 +36,16 @@ class reservationController extends Controller
      */
     public function store(Request $request)
     {
+
+        $id=Auth::id();
+        if (Auth::check()) {
+            return response()->json(['message'=>'log in'],201);
+        }
         $dtype = Reservation::create([
             'start_date'=>$request->input('start_date'),
             'end_date'=>$request->input('end_date'),
             'device_id' => $request->input('device_id'),
-            'noneleader_id' => $request->input('noneleader_id'),
-            'leader_id' => $request->input('leader_id'),
-
-
+            'user_id'=> '1'
 
 
         ]);
