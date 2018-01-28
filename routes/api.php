@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
+Route::get('auth/token','TokenController@auth');
 Route::post('/deviceType/create','DeviceTypeController@createDeviceType');
 Route::get('/deviceType/get','DeviceTypeController@getDeviceType');
 Route::get('/deviceType/get/{id}','DeviceTypeController@findDeviceType');
@@ -29,3 +29,9 @@ Route::get('/login/user/{id}/pwd/{pass}','log@login');
 //device controller apis
 Route::resource('device','DeviceController');
 Route::resource('reservation','reservationController');
+
+
+//AwT authentication
+Route::get('auth/token','TokenController@auth');
+Route::get('auth/refresh','TokenController@refresh');
+Route::get('auth/token/invalidate','TokenController@invalidate');

@@ -29,7 +29,8 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{'MTDF'}}
+                        {{--{{ config('app.name', 'Laravel') }}--}}
                     </a>
                 </div>
 

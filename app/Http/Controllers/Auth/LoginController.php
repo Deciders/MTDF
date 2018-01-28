@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use App\User;
+use Tymon\JWTAuth\Exceptions\JWTException;
+use Tymon\JWTAuth\JWTAuth;
 
 class LoginController extends Controller
 {
@@ -42,4 +44,19 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+//    public function Authenticate(Request $request)
+//    {
+//        $credentials = $request->only('email','password');
+//
+//        try{
+//            if (! $token= JWTAuth::attempt($credentials)){
+//                return $this->response->json(['erro' =>'User crentials are not correct'],401);
+//            }
+//        }catch (JWTException $ex){
+//            return $this->response->json(['erro' =>'something went wrong'],500);
+//        }
+//        return $this->response->json(compact('token'));
+//    }
+
 }
