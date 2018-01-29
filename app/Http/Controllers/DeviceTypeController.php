@@ -6,9 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\DeviceType;
 
 class DeviceTypeController extends Controller
-{
+{     protected $name;
+
     public function createDeviceType(Request $request)
     {
+
+
+
 
       $item = new DeviceType();
         $item->name = $request->input('name');
@@ -24,6 +28,8 @@ class DeviceTypeController extends Controller
      public function getDeviceType(){
         $allItems= DeviceType::all();
         return response()->json(['allitem'=>$allItems],200);
+
+
 
     }
 
