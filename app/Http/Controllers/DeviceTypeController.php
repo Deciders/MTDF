@@ -23,11 +23,16 @@ class DeviceTypeController extends Controller
         $item->	description = $request->input('description');
         $item->	os = $request->input('os');
         $item->save();
-        return response()->json(['message'=>$item],201);
+
+        return redirect('admin');
+        //return response()->json(['message'=>$item],201);
     }
+
      public function getDeviceType(){
+       
         $allItems= DeviceType::all();
-        return response()->json(['allitem'=>$allItems],200);
+        return view('Admin.home',compact('allItems'));
+       // return response()->json(['allitem'=>$allItems],200);
 
 
 
@@ -44,12 +49,28 @@ class DeviceTypeController extends Controller
         }
     }
     public function deleteDeviceType($id)
-    {
-        $item= DeviceType::find($id);
+    {  
+        $item = DeviceType::find($id);
+
         if(!$item){
             return response()->json(['msg'=>"Item not found"],404);
         }
-        $item->delete();
+        
+        if(!$item){
+            return response()->json(['msg'=>"Item not found"],404);
+        }else{
+
+            $item->delete();
+            session()->flash('message','Delete Successfully'); 
+            return redirect('admin/create');
+
+        }
+
+
+
+        //$item= DeviceType::find($id);
+        
+        //$item->delete();
         return response()->json(['msg'=>"Item Deleted"],201);
     }
 
