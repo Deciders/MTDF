@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Models\Leader;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -63,6 +64,12 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $dtype = Leader::create([
+            'gname'=>'kaml',
+            'users_id'=>'2'
+
+
+        ]);
         return User::create([
             'name' => $data['name'],
             'last_name' => $data['last_name'],
@@ -70,5 +77,6 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
             'Isadmin' =>'0',
         ]);
+
     }
 }

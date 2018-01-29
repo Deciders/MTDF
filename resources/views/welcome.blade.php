@@ -101,7 +101,8 @@
                     <div class="container-login100">
 
                         <div class="wrap-login100">
-                            <div class="h4   m-l-5  ">Home</div>
+                            {{--//<div class="text-right p-t-0 ">Home</div>--}}
+                            <a href="http://localhost:8000" class="top-left txt3"  >Home</a>
                             <div class="login100-pic js-tilt" data-tilt>
                                 <img src="images/img-01.png" alt="IMG">
                             </div>
@@ -113,11 +114,15 @@
 					</span>
 
                                 <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+
                                     <input class="input100" id="email"type="text"name="email" value="{{ old('email') }}"placeholder="Email" required autofocus>
+
                                     <span class="focus-input100"></span>
                                     <span class="symbol-input100">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
-						</span>
+							        <i class="fa fa-envelope" aria-hidden="true"></i>
+
+						            </span>
+
                                 </div>
 
                                 <div class="wrap-input100 validate-input" data-validate = "Password is required">
@@ -133,17 +138,29 @@
                                         Login
                                     </button>
                                 </div>
+                                <div>
+                                    @if ($errors->has('email'))
+                                        <span class="txt1">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                    @endif
+                                        @if ($errors->has('password'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                        @endif
 
+                                </div>
                                 <div class="text-center p-t-12">
 						<span class="txt1">
 							Forgot
 						</span>
-                                    <a class="txt2" href="#">
+                                    <a class="txt2"  href="{{ route('password.request') }}">
                                         Username / Password?
                                     </a>
                                 </div>
 
-                                <div class="text-center p-t-136">
+                                <div class="text-center p-t-120">
                                     <a class="txt2" href="/register">
                                         Create your Account
                                         <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>

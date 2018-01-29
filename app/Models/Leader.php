@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Leader extends Model
 {
     protected $table = 'leaders';
-
+    protected $fillable = ['gname','users_id'];
     //there is a disjoint with User . we implement as a one to one relationship
     public function user()
     {
