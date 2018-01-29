@@ -9,7 +9,11 @@ use App\Http\Controllers\DeviceTypeController;
 
 class AdminController extends DeviceTypeController
 {
-   
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     	public function index(){
 

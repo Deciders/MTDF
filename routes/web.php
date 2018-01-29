@@ -12,16 +12,18 @@
 */
 
 Route::get('/start', function () {
-    return view('welcome');
+    return view('clogin');
 });
 Route::get('/', function () {
     return view('Landing');
 });
+
 //Route::get('/device/create','DeviceController@createDevice');
 //Route::get('/device_type/create', 'DeviceTypeController@createDeviceType');
 
 
 Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -31,7 +33,7 @@ Route::resource('reservation','reservationController');
 
 Route::post('admin/deviceType/create','DeviceTypeController@createDeviceType');
 
-//maith
+// Admin DashBoard routes
 
 Route::resource('admin','AdminController');
 Route::post('admin/admin','AdminController@store');

@@ -24,15 +24,15 @@ class DeviceTypeController extends Controller
         $item->	os = $request->input('os');
         $item->save();
 
-        return redirect('admin');
-        //return response()->json(['message'=>$item],201);
+        //return redirect('admin');
+        return response()->json(['message'=>$item],201);
     }
 
      public function getDeviceType(){
        
         $allItems= DeviceType::all();
-        return view('Admin.home',compact('allItems'));
-       // return response()->json(['allitem'=>$allItems],200);
+        //return view('Admin.home',compact('allItems'));
+        return response()->json(['allitem'=>$allItems],200);
 
 
 
