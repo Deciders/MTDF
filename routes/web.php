@@ -28,3 +28,29 @@ Route::get('/home', 'HomeController@index')->name('home');
 //reservations
 Route::resource('reservation','reservationController');
 //Route::get('/authname', 'reservationController@index');
+
+Route::post('admin/deviceType/create','DeviceTypeController@createDeviceType');
+
+//maith
+
+Route::resource('admin','AdminController');
+Route::post('admin/admin','AdminController@store');
+
+
+
+Route::get('/deviceType/get','DeviceTypeController@getDeviceType');
+
+
+
+// //Route::resource('admin/addAdmin','adddevicecontroller');
+
+// Route::get('admin/admin/addAdmin', function () {
+
+//     //return redirect view('Admin.addAdmin'); 
+//     return redirect('create');
+// });
+  
+  // Route::post('admin/admin', function () {
+  //   //return redirect view('Admin.addAdmin'); 
+  //     return redirect('admin');
+  // });

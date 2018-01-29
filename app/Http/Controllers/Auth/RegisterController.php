@@ -64,12 +64,12 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $dtype = Leader::create([
-            'gname'=>'kaml',
-            'users_id'=>'2'
+        // $dtype = Leader::create([
+        //     'gname'=>'kaml',
+        //     'users_id'=>'2'
 
 
-        ]);
+        // ]);
         return User::create([
             'name' => $data['name'],
             'last_name' => $data['last_name'],
