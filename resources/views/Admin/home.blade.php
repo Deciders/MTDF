@@ -61,7 +61,6 @@
 </head>
 
 
-
 <table id="myTable"" style="text-align:center;" >
 	<tr>
 		<th>Version</th>
@@ -123,61 +122,61 @@
     {{csrf_field()}}
 
 <div class="container">
-  <h2>Registration</h2>
+  <h2 style="color: #D7DBDD;">Registration</h2>
 
   <form class="form-horizontal">
 
   <div class="form-group">
-    <label  class="col-sm-6 control-label">First Name</label>
+    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">First Name</label>
     <div class="col-sm-8">
       <input type="text" class="form-control" name="firstname" placeholder="Type Your Firstname" required />
     </div>
   </div>
 
     <div class="form-group">
-    <label  class="col-sm-6 control-label">Last Name</label>
+    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Last Name</label>
     <div class="col-sm-8">
       <input type="text" class="form-control" name="lastname" placeholder="Type Your Lastname" required />
     </div>
   </div>
 
     <div class="form-group">
-    <label class="col-sm-6 control-label">Contact Number</label>
+    <label class="col-sm-6 control-label" style="color:#D7DBDD;">Contact Number</label>
     <div class="col-sm-8">
       <input type="text" class="form-control" name="phonenum" placeholder="Type Your phone number" required />
     </div>
   </div>
 
     <div class="form-group">
-    <label  class="col-sm-6 control-label">User Name</label>
+    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">User Name</label>
     <div class="col-sm-8">
       <input type="text" class="form-control" name="username" placeholder="Type Your Username" required  />
     </div>
   </div>
 
     <div class="form-group">
-    <label  class="col-sm-6 control-label">Password</label>
+    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Password</label>
     <div class="col-sm-8">
       <input type="password" class="form-control" name="password"  placeholder="Type Your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
     </div>
 
 
    <div class="form-group">
-    <label  class="col-sm-6 control-label">Confirm Password</label>
+    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Confirm Password</label>
     <div class="col-sm-8">
       <input type="password" class="form-control" name="cpassword"  placeholder="Type Your Confirm Password" required />
     </div>
 
 
     <div class="form-group">
-    <label  class="col-sm-6 control-label">Email</label>
+    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Email</label>
     <div class="col-sm-8">
       <input type="email" class="form-control" name="email" placeholder="Type Your Email" required />
     </div>
   </div>
 
     <div class="form-group">
-    <label  class="col-sm-6 control-label">Image</label>
+    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Image </label>
     <div class="col-sm-8">
       <input type="file"  name="imag" required  />
     </div>
@@ -186,11 +185,17 @@
   
 
   
-  <div class="form-group">
+  <span><div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
      <input name="submit_btn" type="submit" id="signup_btn" class="btn btn-danger" value="Sign Up" />
     </div>
   </div>
+
+   <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+  <input type="reset" value="Clear" class="btn btn-success" />
+  </div>
+  </div></span>
 
 </form>
 </div>
