@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\DeviceType;
 use App\Http\Controllers\DeviceTypeController;
+use App\Models\Device;
 
 class AdminController extends DeviceTypeController
 {
@@ -50,8 +51,9 @@ class AdminController extends DeviceTypeController
     public function storedevice(Request $request)
     {
 
+
         $dtype = Device::create([
-            'device_type_id'=>$request->input('device_id'),
+            'device_type_id'=>$request->input('device_type_id'),
             'id'=>$request->input('id'),
             'added_date' => $request->input('date'),
             'state' => $request->input('state'),
