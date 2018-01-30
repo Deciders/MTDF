@@ -100,7 +100,7 @@
   <div class="center">
 <h3 style="text-align: center; color: #D7DBDD;">Add New Device</h3>
   
-    <form class="form-horizontal" action="/action_page.php" method="post" onsubmit="return make_json(this);"> 
+    <form class="form-horizontal" action="/action_page.php" method="post" onsubmit="return make_jsonobj(this);"> 
   
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
 
@@ -113,7 +113,7 @@
   <div class="form-group">
     <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Device Name</label>
     <div class="col-sm-8">
-     <select name="device_id" >
+     <select name="device_type_id" >
 
 @foreach ($classname_array as $data)
 <option value="{{ $data->id }}" >{{ $data->name }} </option>
@@ -216,6 +216,21 @@ window.onclick = function(event) {
 		document.getElementById("output").innerHTML=html;
 		return true;
 	}
+</script>
+
+<!--form 2-->
+<script>
+  function make_jsonobj(from){
+    var json=(
+      "device_type_id":from.device_type_id.value,
+      "macAddres":from.macAddres.value,
+      "state":from.state.value,
+      "date":from.ram.value,
+    );
+    var html=JSON.stringify(json,0.4);
+    document.getElementById("output").innerHTML=html;
+    return true;
+  }
 </script>
 
 
