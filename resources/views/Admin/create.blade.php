@@ -1,33 +1,41 @@
 @extends('layout.app')
 
+
 @section('body')
 
 <br>
-<span><a href="/admin" class="btn btn-info">Back</a></span>
-<div class="col-lg-10 col-lg-offset-4">
+<!-- <span><a href="/admin" class="btn btn-info">Back</a></span>
+<div class="col-lg-10 col-lg-offset-4" -->
 
-	<div class="center">
-<h2 style="text-align: center;">Add New Device</h2>
+
+
+<div id="myOverlay" class="overlay">
+  <span class="close" onclick="closeSearch()" title="Close Overlay">×</span>
+  <!-- <div class="overlay-content"> -->
+
+
+<div class="center">
+<h3 style="text-align: center; color: #D7DBDD;">Add Device Type</h3>
 
     <form class="form-horizontal" action="admin" method="post" onsubmit="return make_json(this);">
    {{csrf_field()}}
 <!-- <form class="form-horizontal"> -->
   <div class="form-group">
-    <label  class="col-sm-6 control-label">Mobile version</label>
+    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Mobile version</label>
     <div class="col-sm-8">
       <input type="text" class="form-control" name="version" placeholder="Type Mobile version">
     </div>
   </div>
 
    <div class="form-group">
-    <label  class="col-sm-6 control-label">Device Name</label>
+    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Device Name</label>
     <div class="col-sm-8">
       <input type="text" class="form-control" name="name" placeholder="Type Device Name">
     </div>
   </div>
 
    <div class="form-group">
-    <label  class="col-sm-6 control-label">Os Type</label>
+    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Os Type</label>
     <div class="col-sm-8">
      <select name="os" >
 <option value="selected">--Select Option--</option>
@@ -38,34 +46,115 @@
   </div>
 
    <div class="form-group">
-    <label  class="col-sm-6 control-label">RAM Size</label>
+    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">RAM Size</label>
     <div class="col-sm-8">
       <input type="text" class="form-control" name="ram" placeholder="Type RAM Size">
     </div>
   </div>
 
    <div class="form-group">
-    <label  class="col-sm-6 control-label">Memory Size</label>
+    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Memory Size</label>
     <div class="col-sm-8">
       <input type="text" class="form-control" name="memory" placeholder="Type Memory Size">
     </div>
   </div>
 
   <div class="form-group">
-    <label  class="col-sm-6 control-label">Screen Resalution</label>
+    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Screen Resalution</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" name="screen_resolution" placeholder="Type Mobile Screen Resalution">
     </div>
   </div>
 
    <div class="form-group">
-    <label  class="col-sm-8 control-label">Description About the Diviec</label>
+    <label  class="col-sm-8 control-label" style="color:#D7DBDD;">Description About the Diviec</label>
     <div class="col-sm-10">
     	 <textarea rows="4" cols="50" name="description" class="form-control" placeholder="Write something.."></textarea>
     </div>
   </div>
 
    
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input name="submit_btn" type="submit" id="signup_btn" class="btn btn-danger" value="ADD" />
+    </div>
+  </div>
+
+</div>
+</div>
+</form>
+</div>
+</div>
+
+
+<center><div style="width: 60%; height: 20%;"><button  class="btn btn-primary btn-lg btn-block" onclick="openSearch()">Add New Device Type</button> 
+
+
+<!--Form 2-->
+
+  <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-danger btn-lg btn-block">Add New Device</button>
+</div></center>
+
+<div id="id01" class="overlay">
+  <div class="center">
+<h3 style="text-align: center; color: #D7DBDD;">Add New Device</h3>
+  
+    <form class="form-horizontal" action="/action_page.php" method="post" onsubmit="return make_json(this);"> 
+  
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+
+
+
+   {{csrf_field()}}
+<!-- <form class="form-horizontal"> -->
+  <div class="form-group">
+    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Mobile versio</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" name="version" placeholder="Type Mobile version">
+    </div>
+  </div>
+
+   <div class="form-group">
+    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Device Name</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" name="type" placeholder="Type Device Name">
+    </div>
+  </div>
+
+   <div class="form-group">
+    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">RAM Size</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" name="ram" placeholder="Type RAM Size">
+    </div>
+  </div>
+
+   <div class="form-group">
+    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Memory Size</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" name="memory" placeholder="Type Memory Size">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Screen Resalution</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="resalution" placeholder="Type Mobile Screen Resalution">
+    </div>
+  </div>
+
+   <div class="form-group">
+    <label  class="col-sm-8 control-label" style="color:#D7DBDD;">Description About the Diviec</label>
+    <div class="col-sm-10">
+       <textarea rows="4" cols="50" name="description" class="form-control" placeholder="Write something.."></textarea>
+    </div>
+  </div>
+
+    <div class="form-group">
+    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Added Date</label>
+    <div class="col-sm-8">
+      <input type="date"  class="form-control" name="date">
+    </div>
   </div>
 
 
@@ -75,16 +164,54 @@
       <input name="submit_btn" type="submit" id="signup_btn" class="btn btn-danger" value="ADD" /><br /><br />
     </div>
   </div>
+
+
+      <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button></div>
+
+</div>
 </form>
+</form>
+</div>
+
+
+
+
 
 <pre id="output">
 	File the above from to make json....
 	</pre>
 
+
 @include('Admin.partials.errors')   <!--Error massage-->
 
-</div>
-</div>
+
+
+
+
+<script>
+function openSearch() {
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function closeSearch() {
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
 
 <script>
 	function make_json(from){
