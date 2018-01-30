@@ -8,6 +8,7 @@ use\App\Models\Device;
 use Illuminate\Support\Facades\Auth;
 use Mockery\Exception;
 
+
 class reservationController extends Controller
 {
     /**
@@ -45,10 +46,13 @@ class reservationController extends Controller
     public function store(Request $request)
     {
 
-        $id=Auth::id();
-        if (Auth::check()) {
-            return response()->json(['message'=>'log in'],201);
-        }
+
+       // $id=Auth::id();
+
+//        if (Auth::check()) {
+//
+//            return response()->json(['message'=>'log in'],201);
+//        }
 
 
                 $dtype = Reservation::create([
