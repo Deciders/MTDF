@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\JWTAuth;
+use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
@@ -33,7 +35,15 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin';
+    public function  __cons(){
+        $item = DB::table('users')->where('id',Auth::id());
+        if($item->Isadmin==1){
+            return $redirectTo = 'admin';
+        }else{
+            return $redirectTo = '/home';
+        }
+    }
+
 
     /**
      * Create a new controller instance.
@@ -41,8 +51,10 @@ class LoginController extends Controller
      * @return void
      */
     public function __construct()
+
     {
         $this->middleware('guest')->except('logout');
+
     }
 
 //    public function Authenticate(Request $request)
