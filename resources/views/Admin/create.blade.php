@@ -110,10 +110,17 @@
    {{csrf_field()}}
 <!-- <form class="form-horizontal"> -->
 
-   <div class="form-group">
+  <div class="form-group">
     <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Device Name</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="type" placeholder="Type Device Name">
+     <select name="device_id" >
+
+@foreach ($classname_array as $data)
+<option value="{{ $data->id }}" >{{ $data->name }} </option>
+
+@endforeach
+
+</select>
     </div>
   </div>
 

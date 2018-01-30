@@ -179,6 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
          //Jwt auth providers
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+        App\Providers\DynamicClassname::class,
     ],
 
     /*
