@@ -39,6 +39,7 @@ Route::post('admin/deviceType/create','DeviceTypeController@createDeviceType');
 // Admin DashBoard routes
 
 Route::resource('admin','AdminController');
+Route::post('admin/device','AdminController@storedevice');
 Route::post('admin/admin','AdminController@store');
 
 

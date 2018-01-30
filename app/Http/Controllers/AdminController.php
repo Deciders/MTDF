@@ -45,7 +45,24 @@ class AdminController extends DeviceTypeController
           $item->save();
 
            return redirect('admin');
-       }
+    }
+
+    public function storedevice(Request $request)
+    {
+
+        $dtype = Device::create([
+            'device_type_id'=>$request->input('device_id'),
+            'id'=>$request->input('id'),
+            'added_date' => $request->input('date'),
+            'state' => $request->input('state'),
+            'macAddres' => $request->input('macAddres'),
+            'availability' => 1,
+
+
+        ]);
+
+        return redirect('admin');
+    }
 
 
 
