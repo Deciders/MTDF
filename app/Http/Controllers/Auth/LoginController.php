@@ -6,10 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use App\User;
-use Illuminate\Support\Facades\Auth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\JWTAuth;
-use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
@@ -35,15 +33,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    public function  __cons(){
-        $item = DB::table('users')->where('id',Auth::id());
-        if($item->Isadmin==1){
-            return $redirectTo = 'admin';
-        }else{
-            return $redirectTo = '/home';
-        }
-    }
-
+   // protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -51,24 +41,14 @@ class LoginController extends Controller
      * @return void
      */
     public function __construct()
-
     {
         $this->middleware('guest')->except('logout');
-
     }
 
-//    public function Authenticate(Request $request)
-//    {
-//        $credentials = $request->only('email','password');
-//
-//        try{
-//            if (! $token= JWTAuth::attempt($credentials)){
-//                return $this->response->json(['erro' =>'User crentials are not correct'],401);
-//            }
-//        }catch (JWTException $ex){
-//            return $this->response->json(['erro' =>'something went wrong'],500);
-//        }
-//        return $this->response->json(compact('token'));
-//    }
+    protected function credentials(Request $request)
+    {
+       // return $request->only($this->username(), 'password');
+        return ['email'=>$request{$this->username()},'password'=>$request->password,'state'=>'1'];
+    }
 
 }

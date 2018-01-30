@@ -23,7 +23,10 @@ Route::get('/', function () {
 
 
 Auth::routes();
+//.............................Veryfy Registation with Email.................................................//
 
+Route::get('verifyEmialFirst','Auth\RegisterController@verifyEmialFirst')->name('verifyEmialFirst');
+Route::get('verify/{email}/{verifiyToken}','Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

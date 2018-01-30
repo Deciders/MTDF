@@ -7,7 +7,10 @@ use App\Models\Leader;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Support\Str;
+use Mail;
+use App\Mail\verifyeEmail;
+use Session;
 class RegisterController extends Controller
 {
     /*
@@ -69,20 +72,50 @@ class RegisterController extends Controller
         //     'users_id'=>'2'
 
 
-<<<<<<< HEAD
-        ]);
 
-=======
-        // ]);
->>>>>>> 9ae8704ee970f15074b6b339a4e88fc874a6ab99
-        return User::create([
+        //]);
+
+
+        $user =User::create([
             'name' => $data['name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'remember_token'=>Str::random(40),
             'Isadmin' =>'0',
+            'state'=>'0',
 
         ]);
 
+        $thisUser = User::findOrFail($user->id);
+        $this->sendEmail($thisUser);
+         return $user;
     }
+
+    public function sendEmail($thisUser){
+
+        Mail::to($thisUser['email'])->send(new verifyeEmail($thisUser));
+
+    }
+
+    public function verifyEmialFirst()
+    {
+        return view('emails.verifyEmialFirst');
+    }
+
+    public function sendEmailDone($email,$remember_token){
+
+        $user =User::Where(['email'=>$email,'remember_token'=>$remember_token])->first();
+        if($user){
+            user::where(['email'=>$email,'remember_token'=>$remember_token])->update(['state'=>'1','remember_token'=>NULL]);
+            Session::flash('Success','Registation Success');
+
+            return redirect('login');
+        }else{
+            return "user not found";
+        }
+
+    }
+
+
 }
