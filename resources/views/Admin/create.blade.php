@@ -69,7 +69,7 @@
    <div class="form-group">
     <label  class="col-sm-8 control-label" style="color:#D7DBDD;">Description About the Diviec</label>
     <div class="col-sm-10">
-    	 <textarea rows="4" cols="50" name="description" class="form-control" placeholder="Write something.."></textarea>
+    	 <textarea rows="4" cols="10" name="description" class="form-control" placeholder="Write something.."></textarea>
     </div>
   </div>
 
@@ -95,6 +95,7 @@
   <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-danger btn-lg btn-block">Add New Device</button>
 </div></center>
 
+
 <div id="id01" class="overlay">
   <div class="center">
 <h3 style="text-align: center; color: #D7DBDD;">Add New Device</h3>
@@ -108,12 +109,6 @@
 
    {{csrf_field()}}
 <!-- <form class="form-horizontal"> -->
-  <div class="form-group">
-    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Mobile versio</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" name="version" placeholder="Type Mobile version">
-    </div>
-  </div>
 
    <div class="form-group">
     <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Device Name</label>
@@ -123,30 +118,16 @@
   </div>
 
    <div class="form-group">
-    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">RAM Size</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" name="ram" placeholder="Type RAM Size">
-    </div>
-  </div>
-
-   <div class="form-group">
-    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Memory Size</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" name="memory" placeholder="Type Memory Size">
+    <label  class="col-sm-8 control-label" style="color:#D7DBDD;">Mac Address</label>
+    <div class="col-sm-10">
+     <input type="text" class="form-control" name="macAddres" placeholder="Type A Mac Address">
     </div>
   </div>
 
   <div class="form-group">
-    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Screen Resalution</label>
+    <label  class="col-sm-8 control-label" style="color:#D7DBDD;">State</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="resalution" placeholder="Type Mobile Screen Resalution">
-    </div>
-  </div>
-
-   <div class="form-group">
-    <label  class="col-sm-8 control-label" style="color:#D7DBDD;">Description About the Diviec</label>
-    <div class="col-sm-10">
-       <textarea rows="4" cols="50" name="description" class="form-control" placeholder="Write something.."></textarea>
+     <input type="text" class="form-control" name="state" placeholder="Type Device State">
     </div>
   </div>
 
@@ -166,8 +147,8 @@
   </div>
 
 
-      <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button></div>
+      <!-- <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button></div> -->
 
 </div>
 </form>
@@ -178,9 +159,9 @@
 
 
 
-<pre id="output">
+<!-- <pre id="output">
 	File the above from to make json....
-	</pre>
+	</pre> -->
 
 
 @include('Admin.partials.errors')   <!--Error massage-->
