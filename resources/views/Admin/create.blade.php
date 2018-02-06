@@ -100,11 +100,9 @@
   <div class="center">
 <h3 style="text-align: center; color: #D7DBDD;">Add New Device</h3>
   
-<<<<<<< HEAD
-    {{--<form class="form-horizontal" action="admin/device" method="post" onsubmit="return make_json(this);">--}}
-=======
+
     <form class="form-horizontal" action="admin/device" method="post" onsubmit="return make_jsonobj(this);">
->>>>>>> 11cd88e78e10b4fd52960d8282fc7c55ad79782c
+
   
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
 

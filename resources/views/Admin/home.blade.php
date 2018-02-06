@@ -124,7 +124,7 @@
 <div class="container">
   <h2 style="color: #D7DBDD;">Registration</h2>
 
-  <form class="form-horizontal"  action="admin/register" method="post">
+  <form class="form-horizontal"  action="admin/register" method="post" onsubmit="return make_json(this);">
 
   <div class="form-group">
     <label  class="col-sm-6 control-label" style="color:#D7DBDD;">First Name</label>
@@ -159,6 +159,7 @@
     <div class="col-sm-8">
       <input type="password" class="form-control" name="password"  placeholder="Type Your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
     </div>
+  </div>
 
 
    <div class="form-group">
@@ -166,6 +167,7 @@
     <div class="col-sm-8">
       <input type="password" class="form-control" name="password_confirmation"  placeholder="Type Your Confirm Password" required />
     </div>
+  </div>
 
 
 
@@ -305,17 +307,22 @@ function myFunction() {
 }
 </script>
 
-<!-- <script type="text/javascript">
-    function Validate() {
-        var password = document.getElementById("password").value;
-        var confirmPassword = document.getElementById("cpassword").value;
-        if (password != confirmPassword) {
-            alert("Passwords do not match.");
-            return false;
-        }
-        return true;
-    }
-</script> -->
+<script>
+  function make_json(from){
+    var json=(
+      "firstname":from.firstname.value,
+      "lastname":from.lastname.value,
+      "phonenum":from.phonenum.value,
+      "email":from.email.value,
+      "password":from.password.value,
+      "password_confirmation":from.password_confirmation.value,
+      "imag":from.imag.value,
+    );
+    var html=JSON.stringify(json,0.4);
+    document.getElementById("output").innerHTML=html;
+    return true;
+  }
+</script>
 
 
 
