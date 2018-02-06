@@ -26,7 +26,7 @@
                             <div class="panel-body">
 
                                 <div class="form-group">
-                                    <form class="myform" action="#" method="post">
+                                    <form class="myform" action="admin/register" method="post">
     {{csrf_field()}}
 <label>First Name:</label><br />
 <input name="firstname" type="text" class="inputvales" placeholder="Type Your Firstname" required /><br />
@@ -35,14 +35,16 @@
 
 <label>Contact Number:</label><br />
 <input name="phonenum" type="text" class="inputvales" placeholder="Type Your phone number" required /><br />
-<label>User Name:</label><br />
-<input name="username" type="text" class="inputvales" placeholder="Type Your Username" required /><br />
-<label>Password:</label><br />
+
+ <label>Email:</label><br />
+ <input name="email" type="text" class="inputvales" placeholder="Type Your Email" required /><br />
+
+ <label>Password:</label><br />
 <input name="password" type="password" class="inputvales" placeholder="Type Your Password" required /><br/>
+
 <label>Confirm Password:</label><br />
-<input  name="cpassword" type="password" class="inputvales" placeholder="Type Your Confirm Password" required /><br/>
-<label>Email:</label><br />
-<input name="email" type="text" class="inputvales" placeholder="Type Your Email" required /><br />
+<input  name="password_confirmation " type="password" class="inputvales" placeholder="Type Your Confirm Password" required /><br/>
+
 <label>Image:</label><br />
 <input name="imag" type="file" class="inputvales" required /><br /><br />
 <input name="submit_btn" type="submit" id="signup_btn" class="btn btn-danger" value="Sign Up" /><br /> 

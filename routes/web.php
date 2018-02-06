@@ -18,8 +18,9 @@ Route::get('/', function () {
     return view('Landing');
 });
 
-//Route::get('/device/create','DeviceController@createDevice');
-//Route::get('/device_type/create', 'DeviceTypeController@createDeviceType');
+// Admin Register Routes
+
+Route::post('admin/register','AdminRegisterContoller@register');
 
 
 Auth::routes();

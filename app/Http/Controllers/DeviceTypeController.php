@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DeviceType;
+use Mail;
+use App\Mail\NewDeviceType;
+use Illuminate\Support\Facades\DB;
+use App\User;
 
 class DeviceTypeController extends Controller
 {     protected $name;
@@ -24,9 +28,21 @@ class DeviceTypeController extends Controller
         $item->	os = $request->input('os');
         $item->save();
 
-        //return redirect('admin');
+
+        $thisDevice = DeviceType::findOrFail($item->id);
+        $this->sendEmail($thisDevice);
+
         return response()->json(['message'=>$item],201);
     }
+
+   // Send An Email to all users with New Device Type Information
+
+     public function sendEmail($thisDevice){
+         $Uemails = DB::table('users')->pluck('email');
+
+         Mail::to($Uemails)->send(new NewDeviceType($thisDevice));
+
+     }
 
      public function getDeviceType(){
        

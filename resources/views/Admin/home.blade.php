@@ -61,7 +61,7 @@
 </head>
 
 
-<table id="myTable"" style="text-align:center;" >
+<table id="myTable" style="text-align:center;" >
 	<tr>
 		<th>Version</th>
 		<th>Divice Type</th>
@@ -124,7 +124,7 @@
 <div class="container">
   <h2 style="color: #D7DBDD;">Registration</h2>
 
-  <form class="form-horizontal">
+  <form class="form-horizontal"  action="admin/register" method="post">
 
   <div class="form-group">
     <label  class="col-sm-6 control-label" style="color:#D7DBDD;">First Name</label>
@@ -147,12 +147,12 @@
     </div>
   </div>
 
-    <div class="form-group">
-    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">User Name</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" name="username" placeholder="Type Your Username" required  />
-    </div>
-  </div>
+      <div class="form-group">
+          <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Email</label>
+          <div class="col-sm-8">
+              <input type="email" class="form-control" name="email" placeholder="Type Your Email" required />
+          </div>
+      </div>
 
     <div class="form-group">
     <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Password</label>
@@ -164,16 +164,10 @@
    <div class="form-group">
     <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Confirm Password</label>
     <div class="col-sm-8">
-      <input type="password" class="form-control" name="cpassword"  placeholder="Type Your Confirm Password" required />
+      <input type="password" class="form-control" name="password_confirmation"  placeholder="Type Your Confirm Password" required />
     </div>
 
 
-    <div class="form-group">
-    <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Email</label>
-    <div class="col-sm-8">
-      <input type="email" class="form-control" name="email" placeholder="Type Your Email" required />
-    </div>
-  </div>
 
     <div class="form-group">
     <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Image </label>
@@ -195,10 +189,11 @@
     <div class="col-sm-offset-2 col-sm-10">
   <input type="reset" value="Clear" class="btn btn-success" />
   </div>
-  </div></span>
+  </div> </span>
 
-</form>
-</div>
+ </form>
+
+
 
 
 </div>

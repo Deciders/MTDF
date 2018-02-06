@@ -59,7 +59,7 @@ class reservationController extends Controller
                     'start_date'=>$request->input('start_date'),
                     'end_date'=>$request->input('end_date'),
                     'device_id' => $request->input('device_id'),
-                    'user_id'=>1,
+                    'user_id'=>10,
 
                     $item= Device::find($request->input('device_id')),
                     $item->availability =$request->input('availability'),

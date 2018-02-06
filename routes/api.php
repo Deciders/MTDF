@@ -24,7 +24,7 @@ Route::delete('/deviceType/delete/{id}','DeviceTypeController@deleteDeviceType')
 Route::put('/deviceType/edit/{id}','DeviceTypeController@editDeviceType');
 // for android login
 
-Route::get('/login/user/{id}/pwd/{pass}','log@login');
+Route::get('/login/user','log@login');
 
 //device controller apis
 Route::resource('device','DeviceController');

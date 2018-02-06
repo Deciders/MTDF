@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use App\Models\DeviceType;
 use App\Http\Controllers\DeviceTypeController;
 use App\Models\Device;
+use Mail;
+use Illuminate\Support\Facades\DB;
+use App\Mail\NewDeviceType;
 
 class AdminController extends DeviceTypeController
 {
@@ -44,8 +47,19 @@ class AdminController extends DeviceTypeController
           $item->	description = $request->input('description');
           $item->	os = $request->input('os');
           $item->save();
+           $thisDevice = DeviceType::findOrFail($item->id);
+           $this->sendEmail($thisDevice);
 
            return redirect('admin');
+    }
+
+  // Sent Email When Device type Is Created
+
+    public function sendEmail($thisDevice){
+        $Uemails = DB::table('users')->pluck('email');
+
+        Mail::to($Uemails)->send(new NewDeviceType($thisDevice));
+
     }
 
     public function storedevice(Request $request)
