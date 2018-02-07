@@ -4,11 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DeviceType;
+use Mail;
+use App\Mail\NewDeviceType;
+use Illuminate\Support\Facades\DB;
+use App\User;
 
 class DeviceTypeController extends Controller
-{
+{     protected $name;
+
     public function createDeviceType(Request $request)
     {
+
+
+
 
       $item = new DeviceType();
         $item->name = $request->input('name');
@@ -19,11 +27,30 @@ class DeviceTypeController extends Controller
         $item->	description = $request->input('description');
         $item->	os = $request->input('os');
         $item->save();
+
+
+        $thisDevice = DeviceType::findOrFail($item->id);
+        $this->sendEmail($thisDevice);
+
         return response()->json(['message'=>$item],201);
     }
+
+   // Send An Email to all users with New Device Type Information
+
+     public function sendEmail($thisDevice){
+         $Uemails = DB::table('users')->pluck('email');
+
+         Mail::to($Uemails)->send(new NewDeviceType($thisDevice));
+
+     }
+
      public function getDeviceType(){
+       
         $allItems= DeviceType::all();
+        //return view('Admin.home',compact('allItems'));
         return response()->json(['allitem'=>$allItems],200);
+
+
 
     }
 
@@ -38,12 +65,28 @@ class DeviceTypeController extends Controller
         }
     }
     public function deleteDeviceType($id)
-    {
-        $item= DeviceType::find($id);
+    {  
+        $item = DeviceType::find($id);
+
         if(!$item){
             return response()->json(['msg'=>"Item not found"],404);
         }
-        $item->delete();
+        
+        if(!$item){
+            return response()->json(['msg'=>"Item not found"],404);
+        }else{
+
+            $item->delete();
+            session()->flash('message','Delete Successfully'); 
+            return redirect('admin/create');
+
+        }
+
+
+
+        //$item= DeviceType::find($id);
+        
+        //$item->delete();
         return response()->json(['msg'=>"Item Deleted"],201);
     }
 

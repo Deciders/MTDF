@@ -1,16 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Admin;
 
 use App\User;
-use App\Models\Leader;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Support\Str;
-use Mail;
-use App\Mail\verifyeEmail;
-use Session;
+
 class RegisterController extends Controller
 {
     /*
@@ -31,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = 'admin/home';
 
     /**
      * Create a new controller instance.
@@ -40,7 +36,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest:admin');
     }
 
     /**
@@ -53,7 +49,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -67,55 +63,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        // $dtype = Leader::create([
-        //     'gname'=>'kaml',
-        //     'users_id'=>'2'
-
-
-
-        //]);
-
-
-        $user =User::create([
+        return User::create([
             'name' => $data['name'],
-            'last_name' => $data['last_name'],
+            'lastname' => $data['lastname'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'remember_token'=>Str::random(40),
-            'Isadmin' =>'0',
-            'state'=>'0',
-
         ]);
-
-        $thisUser = User::findOrFail($user->id);
-        $this->sendEmail($thisUser);
-         return $user;
     }
-
-    public function sendEmail($thisUser){
-
-        Mail::to($thisUser['email'])->send(new verifyeEmail($thisUser));
-
-    }
-
-    public function verifyEmialFirst()
-    {
-        return view('emails.verifyEmialFirst');
-    }
-
-    public function sendEmailDone($email,$remember_token){
-
-        $user =User::Where(['email'=>$email,'remember_token'=>$remember_token])->first();
-        if($user){
-            user::where(['email'=>$email,'remember_token'=>$remember_token])->update(['state'=>'1','remember_token'=>NULL]);
-            Session::flash('Success','Registation Success');
-
-            return redirect('login');
-        }else{
-            return "user not found";
-        }
-
-    }
-
-
 }

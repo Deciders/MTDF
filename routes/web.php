@@ -12,19 +12,56 @@
 */
 
 Route::get('/start', function () {
-    return view('welcome');
+    return view('clogin');
 });
 Route::get('/', function () {
     return view('Landing');
 });
-//Route::get('/device/create','DeviceController@createDevice');
-//Route::get('/device_type/create', 'DeviceTypeController@createDeviceType');
+
+// Admin Register Routes
+
+Route::post('admin/CoustomRegistation','AdminRegisterContoller@register');
 
 
 Auth::routes();
+//.............................Veryfy Registation with Email.................................................//
+
+Route::get('verifyEmialFirst','Auth\RegisterController@verifyEmialFirst')->name('verifyEmialFirst');
+Route::get('verify/{email}/{verifiyToken}','Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
+
+
+//.........................Change Admin Password..........................................................//
+Route::get('change/{email}/{verifiyToken}','AdminRegisterContoller@sendEmailDone')->name('changepass');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 //reservations
 Route::resource('reservation','reservationController');
 //Route::get('/authname', 'reservationController@index');
+
+Route::post('admin/deviceType/create','DeviceTypeController@createDeviceType');
+
+// Admin DashBoard routes
+
+Route::resource('admin','AdminController');
+Route::post('admin/admin/device','AdminController@storedevice');
+Route::post('admin/admin','AdminController@store');
+
+
+
+Route::get('/deviceType/get','DeviceTypeController@getDeviceType');
+
+
+
+// //Route::resource('admin/addAdmin','adddevicecontroller');
+
+// Route::get('admin/admin/addAdmin', function () {
+
+//     //return redirect view('Admin.addAdmin'); 
+//     return redirect('create');
+// });
+  
+  // Route::post('admin/admin', function () {
+  //   //return redirect view('Admin.addAdmin'); 
+  //     return redirect('admin');
+  // });

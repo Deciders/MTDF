@@ -3,13 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use\App\Models\Reservation;
-use\App\Models\Device;
-use Illuminate\Support\Facades\Auth;
-use Mockery\Exception;
+use App\device;
 
-
-class reservationController extends Controller
+class adddevicecontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,15 +14,9 @@ class reservationController extends Controller
      */
     public function index()
     {
-
-       // $user = Auth::id();
-      //  return response()->json(['allitem'=>$user],200);
-
-
-     $item= Reservation::all();
-     return response()->json(['allitem'=>$item],200);
+        $devices = device::all();
+        return view('Admin.home',compact('devices'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -34,8 +24,8 @@ class reservationController extends Controller
      */
     public function create()
     {
-        //
-    }
+        return view('Admin.create'); 
+        }
 
     /**
      * Store a newly created resource in storage.
@@ -45,34 +35,28 @@ class reservationController extends Controller
      */
     public function store(Request $request)
     {
-
-
-       // $id=Auth::id();
-
-//        if (Auth::check()) {
-//
-//            return response()->json(['message'=>'log in'],201);
-//        }
-
-
-                $dtype = Reservation::create([
-                    'start_date'=>$request->input('start_date'),
-                    'end_date'=>$request->input('end_date'),
-                    'device_id' => $request->input('device_id'),
-                    'user_id'=>10,
-
-                    $item= Device::find($request->input('device_id')),
-                    $item->availability =$request->input('availability'),
-                    $item->save()
-                ]);
-
-                return response()->json(['message'=>'success'],201);
-
-
-
-
-
-    }
+           $device = new device;
+           $this->validate($request,[
+            'version'=>'required',
+             'type'=>'required',
+              'os'=>'required',
+               'ram'=>'required',
+                'memory'=>'required',
+                 'resalution'=>'required',
+                  'description'=>'required',
+                  // 'date'=>'required',
+              ]);
+           $device->version = $request->version;
+           $device->type = $request->type;
+           $device->os = $request->os;
+           $device->ram = $request->ram;
+           $device->memory = $request->memory;
+           $device->resalution = $request->resalution;
+           $device->description = $request->description;
+           $device->date = $request->date;
+           $device->save();
+           return redirect('admin');
+       }
 
     /**
      * Display the specified resource.
@@ -82,7 +66,7 @@ class reservationController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Admin.addAdmin');
     }
 
     /**
@@ -93,9 +77,8 @@ class reservationController extends Controller
      */
     public function edit($id)
     {
-        //
-    }
-
+       // 
+}
     /**
      * Update the specified resource in storage.
      *
@@ -114,8 +97,12 @@ class reservationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    
     public function destroy($id)
     {
-        //
+        $item = device::find($id);
+        $item->delete();
+        session()->flash('message','Delete Successfully'); 
+        return redirect('/admin');
     }
 }

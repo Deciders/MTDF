@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'MTDF'),
 
     /*
     |--------------------------------------------------------------------------
@@ -179,6 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
          //Jwt auth providers
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+        App\Providers\DynamicClassname::class,
     ],
 
     /*

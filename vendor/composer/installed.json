@@ -1220,6 +1220,56 @@
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "BSD-3-Clause"
+<<<<<<< HEAD
+        ],
+        "authors": [
+            {
+                "name": "Nikita Popov"
+            }
+        ],
+        "description": "A PHP parser written in PHP",
+        "keywords": [
+            "parser",
+            "php"
+        ]
+    },
+    {
+        "name": "paragonie/random_compat",
+        "version": "v2.0.11",
+        "version_normalized": "2.0.11.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/paragonie/random_compat.git",
+            "reference": "5da4d3c796c275c55f057af5a643ae297d96b4d8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/paragonie/random_compat/zipball/5da4d3c796c275c55f057af5a643ae297d96b4d8",
+            "reference": "5da4d3c796c275c55f057af5a643ae297d96b4d8",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.*|5.*"
+        },
+        "suggest": {
+            "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
+        },
+        "time": "2017-09-27T21:40:39+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "lib/random.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+=======
+>>>>>>> adcd56c4aeb46bf02d192803d99c04c2e62b839e
         ],
         "authors": [
             {
@@ -1340,6 +1390,7 @@
     },
     {
         "name": "phpdocumentor/reflection-docblock",
+<<<<<<< HEAD
         "version": "3.3.2",
         "version_normalized": "3.3.2.0",
         "source": {
@@ -1355,16 +1406,47 @@
         },
         "require": {
             "php": "^5.6 || ^7.0",
+=======
+        "version": "4.3.0",
+        "version_normalized": "4.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
+            "reference": "94fd0001232e47129dd3504189fa1c7225010d08"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/94fd0001232e47129dd3504189fa1c7225010d08",
+            "reference": "94fd0001232e47129dd3504189fa1c7225010d08",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.0",
+>>>>>>> adcd56c4aeb46bf02d192803d99c04c2e62b839e
             "phpdocumentor/reflection-common": "^1.0.0",
             "phpdocumentor/type-resolver": "^0.4.0",
             "webmozart/assert": "^1.0"
         },
         "require-dev": {
+<<<<<<< HEAD
             "mockery/mockery": "^0.9.4",
             "phpunit/phpunit": "^4.4"
         },
         "time": "2017-11-10T14:09:06+00:00",
         "type": "library",
+=======
+            "doctrine/instantiator": "~1.0.5",
+            "mockery/mockery": "^1.0",
+            "phpunit/phpunit": "^6.4"
+        },
+        "time": "2017-11-30T07:14:17+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.x-dev"
+            }
+        },
+>>>>>>> adcd56c4aeb46bf02d192803d99c04c2e62b839e
         "installation-source": "dist",
         "autoload": {
             "psr-4": {

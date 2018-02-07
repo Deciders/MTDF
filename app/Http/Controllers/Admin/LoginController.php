@@ -1,20 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
-
+namespace App\Http\Controllers\Admin;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Http\Request;
-use App\User;
-use Tymon\JWTAuth\Exceptions\JWTException;
-use Tymon\JWTAuth\JWTAuth;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-
-
-
-
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -33,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-   // protected $redirectTo = '/admin';
+    protected $redirectTo = 'admin';
 
     /**
      * Create a new controller instance.
@@ -42,13 +35,34 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest:admin')->except('logout');
     }
 
-    protected function credentials(Request $request)
+ protected function sendLoginResponse(Request $request)
     {
-       // return $request->only($this->username(), 'password');
-        return ['email'=>$request{$this->username()},'password'=>$request->password,'state'=>'1'];
+        $request->session()->regenerate();
+
+        $this->clearLoginAttempts($request);
+
+        foreach ($this->guard()->user()->role as $role) {
+           if($role->name == 'admin'){
+            return redirect('admin/home');
+           }else if($role->name=='editor'){
+            return redirect('admin/editor');
+           }
+        }
     }
+
+
+
+    public function showLoginForm()
+    {
+        return view('admin.login');
+    }
+
+    protected function guard(){
+        return auth::guard('admin');
+    }
+
 
 }
