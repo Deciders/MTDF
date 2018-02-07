@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 // Admin Register Routes
 
-Route::post('admin/register','AdminRegisterContoller@register');
+Route::post('admin/CoustomRegistation','AdminRegisterContoller@register');
 
 
 Auth::routes();
@@ -28,6 +28,10 @@ Auth::routes();
 
 Route::get('verifyEmialFirst','Auth\RegisterController@verifyEmialFirst')->name('verifyEmialFirst');
 Route::get('verify/{email}/{verifiyToken}','Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
+
+
+//.........................Change Admin Password..........................................................//
+Route::get('change/{email}/{verifiyToken}','AdminRegisterContoller@sendEmailDone')->name('changepass');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
