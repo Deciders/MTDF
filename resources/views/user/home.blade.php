@@ -63,7 +63,14 @@
 </div>
 
 <div class="logout">
-<li><button>Log out</button></li>
+    <a href="{{ route('logout') }}"
+       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+        Logout
+    </a>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+    </form>
 
 </div>
 
@@ -164,7 +171,7 @@
     </div>
 
     <div class="col-md-4 col-md-pull-4 ">
-      <a href="viewdevice">
+      <a href="/user/showDevice">
       <div class="alert alert-info">View devices</div></a>
       <img class="img-responsive img-circle" src="https://ak9.picdn.net/shutterstock/videos/8144629/thumb/1.jpg" alt="Greece-1173 - Temple of Athena by Dennis Jarvis, on Flickr">
     </div>

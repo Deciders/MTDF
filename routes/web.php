@@ -17,6 +17,11 @@ Route::get('/start', function () {
 Route::get('/', function () {
     return view('Landing');
 });
+//...............User Dashbord Controllers.............................//
+Route::get('user/showDevice','UserController@showDevice');
+
+//...................... If user redirect to user page...................//
+Route::get('/home', 'HomeController@index')->name('home');
 
 // Admin Register Routes
 
@@ -33,7 +38,7 @@ Route::get('verify/{email}/{verifiyToken}','Auth\RegisterController@sendEmailDon
 //.........................Change Admin Password..........................................................//
 Route::get('change/{email}/{verifiyToken}','AdminRegisterContoller@sendEmailDone')->name('changepass');
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 //reservations
 Route::resource('reservation','reservationController');
@@ -50,9 +55,6 @@ Route::post('admin/admin','AdminController@store');
 
 
 Route::get('/deviceType/get','DeviceTypeController@getDeviceType');
-
-
-
 // //Route::resource('admin/addAdmin','adddevicecontroller');
 
 // Route::get('admin/admin/addAdmin', function () {
