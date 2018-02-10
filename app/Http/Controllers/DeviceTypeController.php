@@ -38,6 +38,7 @@ class DeviceTypeController extends Controller
    // Send An Email to all users with New Device Type Information
 
      public function sendEmail($thisDevice){
+
          $Uemails = DB::table('users')->pluck('email');
 
          Mail::to($Uemails)->send(new NewDeviceType($thisDevice));

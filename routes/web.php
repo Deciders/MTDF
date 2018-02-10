@@ -55,6 +55,15 @@ Route::post('admin/admin','AdminController@store');
 
 
 Route::get('/deviceType/get','DeviceTypeController@getDeviceType');
+
+//'''''''''''''''facebook login routes'''''''''''''''''''//
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
+
+
+
+
 // //Route::resource('admin/addAdmin','adddevicecontroller');
 
 // Route::get('admin/admin/addAdmin', function () {
