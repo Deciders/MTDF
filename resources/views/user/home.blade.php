@@ -63,14 +63,7 @@
 </div>
 
 <div class="logout">
-    <a href="{{ route('logout') }}"
-       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-        Logout
-    </a>
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-        {{ csrf_field() }}
-    </form>
+<li><button>Log out</button></li>
 
 </div>
 
@@ -166,12 +159,12 @@
     <hr>
 
     <div class="col-md-4 col-md-push-4">
-      <router-link to="Reservation"><div class="alert alert-danger">Reservation</div></router-link>
+    <a href="reservation"><div class="alert alert-danger">Reservation</div></a>
       <img class="img-responsive img-circle" src="https://www.news.lk/media/k2/items/cache/fe4c55e44bb1c0de9c6b06947ebdc471_XL.jpg" alt="Greece-1173 - Temple of Athena by Dennis Jarvis, on Flickr">
     </div>
 
     <div class="col-md-4 col-md-pull-4 ">
-      <a href="/user/showDevice">
+      <a href="viewdevice">
       <div class="alert alert-info">View devices</div></a>
       <img class="img-responsive img-circle" src="https://ak9.picdn.net/shutterstock/videos/8144629/thumb/1.jpg" alt="Greece-1173 - Temple of Athena by Dennis Jarvis, on Flickr">
     </div>
@@ -211,6 +204,11 @@
     </div>
 
     <div class="col-md-4 col-md-pull-4">
+      <div class="alert alert-success">Chat Box</div>
+      <img class="img-responsive img-circle"src="https://cartridges4charity.co.uk/static/images/mobile-phones.jpg" v-img="picture" >
+    </div>
+
+    <div class="col-md-4">
       <div class="alert alert-success">Chat Box</div>
       <img class="img-responsive img-circle"src="https://cartridges4charity.co.uk/static/images/mobile-phones.jpg" v-img="picture" >
     </div>
