@@ -259,19 +259,19 @@
                         <div class="well-title">
                             <h2>Book an Start Your Testing</h2>
                         </div>
-                        <form method="post">
+                        <form class ="" action="/register"  method="post" onsubmit="return make_json(this);"au>
                            
                                 <!-- Text input-->
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label" for="date">Start Date</label>
-                                        <input id="date" name="date" type="text" placeholder="Start Date" class="form-control input-md">
+                                        <input id="date" name="start_date" type="text" placeholder="Start Date" class="form-control input-md">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label" for="date">End Date</label>
-                                        <input id="date" name="date" type="text" placeholder="End Date" class="form-control input-md">
+                                        <input id="date" name="end_date" type="text" placeholder="End Date" class="form-control input-md">
                                     </div>
                                 </div>
                                 <!-- Select Basic -->
@@ -310,6 +310,19 @@ function openSearch() {
 function closeSearch() {
     document.getElementById("myOverlay").style.display = "none";
 }
+</script>
+
+<script>
+  function make_json(from){
+    var json=(
+      "start_date":from.start_date.value,
+      "end_date":from.end_date.value,
+      
+    );
+    var html=JSON.stringify(json,0.4);
+    document.getElementById("output").innerHTML=html;
+    return true;
+  }
 </script>
 
 
