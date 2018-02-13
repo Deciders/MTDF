@@ -18,7 +18,8 @@ Route::get('/', function () {
     return view('Landing');
 });
 //...............User Dashbord Controllers.............................//
-Route::get('user/viewdevice','UserController@viewdevice');
+Route::get('user/showDevice','UserController@showDevice');
+Route::get('user/reservation','UserController@reservation');
 
 //...................... If user redirect to user page...................//
 Route::get('/home', 'HomeController@index')->name('home');
