@@ -8,7 +8,7 @@ class Device extends Model
 {
     protected $table = 'devices';
 
-    protected $fillable = ['state','added_date','macAddres','availability', 'device_type_id'];
+    protected $fillable = ['state','added_date','macAddres','availability', 'device_type_id','name'];
 
     //many to one relationship with DataType
     public function deviceType()

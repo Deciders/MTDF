@@ -8,7 +8,7 @@ class DeviceType extends Model
 {
     protected $table = 'device_type';
 
-    protected $fillable= ['name'];
+    protected $fillable= ['name','imgurl'];
 
 
     // one to many relationship with Devices
