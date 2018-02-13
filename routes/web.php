@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('Landing');
 });
 //...............User Dashbord Controllers.............................//
-Route::get('user/showDevice','UserController@showDevice');
+Route::get('user/viewdevice','UserController@viewdevice');
 
 //...................... If user redirect to user page...................//
 Route::get('/home', 'HomeController@index')->name('home');
@@ -76,3 +76,11 @@ Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallba
   //   //return redirect view('Admin.addAdmin'); 
   //     return redirect('admin');
   // });
+/*comment page*/
+
+
+Route::get('/comments',function(){
+return view('user.comments');
+});
+
+Route::post('/comment','CommentsController@store');

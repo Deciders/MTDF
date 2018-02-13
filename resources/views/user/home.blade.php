@@ -209,7 +209,7 @@
     </div>
 
     <div class="col-md-4">
-      <div class="alert alert-success">Chat Box</div>
+    <a href="comments"><div class="alert alert-success">Chat Box</div></a>
       <img class="img-responsive img-circle"src="https://cartridges4charity.co.uk/static/images/mobile-phones.jpg" v-img="picture" >
     </div>
 
