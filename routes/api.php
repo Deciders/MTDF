@@ -26,6 +26,10 @@ Route::put('/deviceType/edit/{id}','DeviceTypeController@editDeviceType');
 
 Route::get('/login/user','log@login');
 
+// Send Notification
+Route::post('/sent','sentNotification@CronReservation');
+
+
 //device controller apis
 Route::resource('device','DeviceController');
 
