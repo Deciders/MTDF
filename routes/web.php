@@ -42,10 +42,16 @@ Route::post('admin/deviceType/create','DeviceTypeController@createDeviceType');
 Route::resource('admin','AdminController');
 Route::post('admin/admin/device','AdminController@storedevice');
 Route::post('admin/admin','AdminController@store');
+//Route::get('/admin/value/{id}','AdminController@value');
+
 
 
 
 Route::get('/deviceType/get','DeviceTypeController@getDeviceType');
+
+
+
+Route::post('/admin/mychart','chartController@showChart');
 
 
 

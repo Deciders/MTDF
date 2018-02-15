@@ -80,6 +80,12 @@
     </div>
   </div>
 
+    <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+  <input type="reset" value="Clear" class="btn btn-success" />
+  </div>
+  </div> </span>
+
 </div>
 </div>
 </form>
@@ -154,6 +160,12 @@
       <input name="submit_btn" type="submit" id="signup_btn" class="btn btn-danger" value="ADD" /><br /><br />
     </div>
   </div>
+
+    <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+  <input type="reset" value="Clear" class="btn btn-success" />
+  </div>
+  </div> </span>
 
 
       <!-- <div class="container" style="background-color:#f1f1f1">
