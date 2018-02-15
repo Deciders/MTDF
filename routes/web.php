@@ -17,10 +17,16 @@ Route::get('/start', function () {
 Route::get('/', function () {
     return view('Landing');
 });
+//...............User Dashbord Controllers.............................//
+Route::get('user/showDevice','UserController@showDevice');
+Route::get('user/reservation','UserController@reservation');
+
+//...................... If user redirect to user page...................//
+Route::get('/home', 'HomeController@index')->name('home');
 
 // Admin Register Routes
 
-Route::post('admin/register','AdminRegisterContoller@register');
+Route::post('admin/CoustomRegistation','AdminRegisterContoller@register');
 
 
 Auth::routes();
@@ -29,7 +35,11 @@ Auth::routes();
 Route::get('verifyEmialFirst','Auth\RegisterController@verifyEmialFirst')->name('verifyEmialFirst');
 Route::get('verify/{email}/{verifiyToken}','Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+//.........................Change Admin Password..........................................................//
+Route::get('change/{email}/{verifiyToken}','AdminRegisterContoller@sendEmailDone')->name('changepass');
+
+
 
 //reservations
 Route::resource('reservation','reservationController');
@@ -49,6 +59,12 @@ Route::post('admin/admin','AdminController@store');
 
 Route::get('/deviceType/get','DeviceTypeController@getDeviceType');
 
+//'''''''''''''''facebook login routes'''''''''''''''''''//
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
+
+
 
 
 Route::post('/admin/mychart','chartController@showChart');
@@ -67,3 +83,11 @@ Route::post('/admin/mychart','chartController@showChart');
   //   //return redirect view('Admin.addAdmin'); 
   //     return redirect('admin');
   // });
+/*comment page*/
+
+
+Route::get('/comments',function(){
+return view('user.comments');
+});
+
+Route::post('/comment','CommentsController@store');

@@ -136,33 +136,28 @@
 
                               
                                  
-    {{csrf_field()}}
+
 
 <div class="container">
   <h2 style="color: #D7DBDD;">Registration</h2>
 
-  <form class="form-horizontal"  action="admin/register" method="post" onsubmit="return make_json(this);">
-
+  <form class="form-horizontal"  action="admin/CoustomRegistation" method="post" onsubmit="return make_json(this);">
+      {{csrf_field()}}
   <div class="form-group">
     <label  class="col-sm-6 control-label" style="color:#D7DBDD;">First Name</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="firstname" placeholder="Type Your Firstname" required />
+      <input type="text" class="form-control" name="name" placeholder="Type Your Firstname" required />
     </div>
   </div>
 
     <div class="form-group">
     <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Last Name</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="lastname" placeholder="Type Your Lastname" required />
+      <input type="text" class="form-control" name="last_name" placeholder="Type Your Lastname" required />
     </div>
   </div>
 
-    <div class="form-group">
-    <label class="col-sm-6 control-label" style="color:#D7DBDD;">Contact Number</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" name="phonenum" placeholder="Type Your phone number" required />
-    </div>
-  </div>
+
 
       <div class="form-group">
           <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Email</label>
@@ -382,8 +377,7 @@ function myFunction() {
   function make_json(from){
     var json=(
       "firstname":from.firstname.value,
-      "lastname":from.lastname.value,
-      "phonenum":from.phonenum.value,
+      "last_name":from.lastname.value,
       "email":from.email.value,
       "password":from.password.value,
       "password_confirmation":from.password_confirmation.value,

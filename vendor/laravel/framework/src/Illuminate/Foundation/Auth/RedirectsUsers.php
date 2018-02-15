@@ -17,6 +17,7 @@ trait RedirectsUsers
             return $this->redirectTo();
         }
    // check wather user is admin or not
+
         if(Auth::user()->Isadmin==0){
             return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
         }else{

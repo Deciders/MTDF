@@ -180,8 +180,12 @@ return [
          //Jwt auth providers
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
         App\Providers\DynamicClassname::class,
+<<<<<<< HEAD
          App\Providers\DynamicClassname2::class,
          ConsoleTVs\Charts\ChartsServiceProvider::class,
+=======
+        Laravel\Socialite\SocialiteServiceProvider::class,
+>>>>>>> feb4f7bb6d7cfa98750cd2dae7f7bfa468370005
     ],
 
     /*
@@ -235,7 +239,11 @@ return [
         'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
         'JWTAuth'   =>Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' =>Tymon\JWTAuth\Facades\JWTFactory::class,
+<<<<<<< HEAD
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
+=======
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+>>>>>>> feb4f7bb6d7cfa98750cd2dae7f7bfa468370005
 
 
     ],

@@ -26,6 +26,7 @@ class DeviceTypeController extends Controller
         $item->	screen_resolution = $request->input('screen_resolution');
         $item->	description = $request->input('description');
         $item->	os = $request->input('os');
+        $item->	os = $request->input('imgurl');
         $item->save();
 
 
@@ -38,6 +39,7 @@ class DeviceTypeController extends Controller
    // Send An Email to all users with New Device Type Information
 
      public function sendEmail($thisDevice){
+
          $Uemails = DB::table('users')->pluck('email');
 
          Mail::to($Uemails)->send(new NewDeviceType($thisDevice));
@@ -103,6 +105,7 @@ class DeviceTypeController extends Controller
         $item->	screen_resolution = $request->input('screen_resolution');
         $item->	description = $request->input('description');
         $item->	os = $request->input('os');
+        $item->	os = $request->input('imgurl');
         $item->save();
         return response()->json(['message'=>$item],200);
 

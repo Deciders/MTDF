@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
         <style>
             html, body {
                 background-color: #fff;
@@ -151,6 +152,7 @@
                                         @endif
 
                                 </div>
+
                                 <div class="text-center p-t-12">
 						<span class="txt1">
 							Forgot
@@ -159,6 +161,10 @@
                                         Username / Password?
                                     </a>
                                 </div>
+                                 <br>
+                                <a class="btn btn-block btn-social btn-facebook" href ="{{route('facebook')}}">
+                                     <span class="fa fa-facebook" ></span> Sign in with facebook
+                                </a>
 
                                 <div class="text-center p-t-120">
                                     <a class="txt2" href="/register">

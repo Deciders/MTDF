@@ -22,6 +22,7 @@ class CreateDevicetypeTable extends Migration
             $table->string('screen_resolution')->nullable();
             $table->string('description')->nullable();
             $table->string('os')->nullable();
+            $table->string('imgurl')->nullable();
             $table->timestamps();
         });
     }

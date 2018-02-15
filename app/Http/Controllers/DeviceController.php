@@ -37,10 +37,11 @@ class DeviceController extends Controller
     public function store(Request $request)
     {
         $dtype = Device::create([
-            'device_type_id'=>$request->input('device_id'),
+            'device_type_id'=>$request->input('device_type_id'),
             'id'=>$request->input('id'),
             'added_date' => $request->input('date'),
             'state' => $request->input('state'),
+             'name' => $request->input('name'),
             'macAddres' => $request->input('macAddres'),
             'availability' => 1,
 

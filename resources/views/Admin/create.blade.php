@@ -146,6 +146,14 @@
     </div>
   </div>
 
+
+        <div class="form-group">
+            <label  class="col-sm-8 control-label" style="color:#D7DBDD;">Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="name" placeholder="Type Device name">
+            </div>
+        </div>
+
     <div class="form-group">
     <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Added Date</label>
     <div class="col-sm-8">
@@ -239,6 +247,7 @@ window.onclick = function(event) {
       "device_type_id":from.device_type_id.value,
       "macAddres":from.macAddres.value,
       "state":from.state.value,
+      "name":from.name.value,
       "date":from.ram.value,
     );
     var html=JSON.stringify(json,0.4);

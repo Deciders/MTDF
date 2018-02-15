@@ -7,6 +7,7 @@
 <body>
 <div class="alert alert-dismissible alert-info">
     <P> This is NEw Device type <br> <strong> Name </strong>{{ $Device->name}} </P>
+    <br> <P> <strong> OS </strong>{{ $Device->os}} </P>
 
 </div>
 </body>

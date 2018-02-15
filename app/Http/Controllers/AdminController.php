@@ -71,6 +71,7 @@ class AdminController extends DeviceTypeController
             'id'=>$request->input('id'),
             'added_date' => $request->input('date'),
             'state' => $request->input('state'),
+            'name' => $request->input('name'),
             'macAddres' => $request->input('macAddres'),
             'availability' => 1,
 
