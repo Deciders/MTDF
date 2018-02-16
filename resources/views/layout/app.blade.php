@@ -190,7 +190,10 @@
      <li class="nav-item">
       <!-- <a class="nav-link" href="admin/create">ADD </a> -->
       <a class="nav-link" href="admin/create" style="cursor: pointer;">ADD </a>
+     </li>
 
+     <li class="nav-item">
+      <a class="nav-link" id="myBtn" href="admin/mychart" style="cursor: pointer;">REPORT</a>
     </li>
   
   </ul>

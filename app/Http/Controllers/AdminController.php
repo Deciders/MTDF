@@ -91,5 +91,8 @@ class AdminController extends DeviceTypeController
         session()->flash('message','Delete Successfully'); 
         return redirect('/admin');
     }
+
     
+     
+     
 }
