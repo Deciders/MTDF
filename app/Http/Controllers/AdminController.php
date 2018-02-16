@@ -46,11 +46,12 @@ class AdminController extends DeviceTypeController
           $item->	screen_resolution = $request->input('screen_resolution');
           $item->	description = $request->input('description');
           $item->	os = $request->input('os');
+        $item->	imgurl = $request->input('imgurl');
           $item->save();
            $thisDevice = DeviceType::findOrFail($item->id);
            $this->sendEmail($thisDevice);
 
-           return redirect('admin');
+           return redirect('admin/admin/create');
     }
 
   // Sent Email When Device type Is Created

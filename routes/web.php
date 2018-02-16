@@ -52,7 +52,12 @@ Route::post('admin/deviceType/create','DeviceTypeController@createDeviceType');
 Route::resource('admin','AdminController');
 Route::post('admin/admin/device','AdminController@storedevice');
 Route::post('admin/admin','AdminController@store');
+// Redirect route for admin dashbord
 
+Route::get('admin/admin/create', function () {
+
+    return redirect('admin/create');
+ });
 
 
 Route::get('/deviceType/get','DeviceTypeController@getDeviceType');
@@ -66,11 +71,10 @@ Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallba
 
 
 // //Route::resource('admin/addAdmin','adddevicecontroller');
-
-// Route::get('admin/admin/addAdmin', function () {
-
-//     //return redirect view('Admin.addAdmin'); 
-//     return redirect('create');
+// Route::get('admin/admin/create', function () {
+//
+//    return view('Admin.addAdmin');
+//    //return redirect('create');
 // });
   
   // Route::post('admin/admin', function () {

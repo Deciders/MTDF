@@ -67,12 +67,17 @@
   </div>
 
    <div class="form-group">
-    <label  class="col-sm-8 control-label" style="color:#D7DBDD;">Description About the Diviec</label>
+    <label  class="col-sm-8 control-label" style="color:#D7DBDD;">Description About the Divice</label>
     <div class="col-sm-10">
     	 <textarea rows="4" cols="10" name="description" class="form-control" placeholder="Write something.."></textarea>
     </div>
   </div>
-
+       <div class="form-group">
+           <label  class="col-sm-8 control-label" style="color:#D7DBDD;">URL for image</label>
+           <div class="col-sm-10">
+               <textarea rows="4" cols="10" name="imgurl" class="form-control" placeholder="Write something.."></textarea>
+           </div>
+       </div>
    
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
