@@ -52,12 +52,12 @@ Route::post('admin/deviceType/create','DeviceTypeController@createDeviceType');
 Route::resource('admin','AdminController');
 Route::post('admin/admin/device','AdminController@storedevice');
 Route::post('admin/admin','AdminController@store');
-<<<<<<< HEAD
-// Redirect route for admin dashbord
-=======
-//Route::get('/admin/value/{id}','AdminController@value');
 
->>>>>>> abc3afd983115046a9cf1d8b62fc3d4118ac2904
+// Redirect route for admin dashbord
+
+Route::get('/admin/value/{id}','AdminController@value');
+
+
 
 Route::get('admin/admin/create', function () {
 
