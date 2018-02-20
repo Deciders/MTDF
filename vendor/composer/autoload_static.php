@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit8becec16953380a336b5413dcbf94c51
+class ComposerStaticInit4e6ecc4e4a28ca7d78a7837f5a8b99c1
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -12,10 +12,18 @@ class ComposerStaticInit8becec16953380a336b5413dcbf94c51
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+<<<<<<< HEAD
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+=======
+        '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+>>>>>>> 095dcc717cef40d86793e78db19cc315f1d64534
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
@@ -105,6 +113,7 @@ class ComposerStaticInit8becec16953380a336b5413dcbf94c51
         array (
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Common\\Inflector\\' => 26,
             'DeepCopy\\' => 9,
         ),
         'C' => 
@@ -255,6 +264,17 @@ class ComposerStaticInit8becec16953380a336b5413dcbf94c51
         'Laravel\\Socialite\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/socialite/src',
+<<<<<<< HEAD
+=======
+        ),
+        'Jenssegers\\Date\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jenssegers/date/src',
+        ),
+        'Intervention\\Image\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
+>>>>>>> 095dcc717cef40d86793e78db19cc315f1d64534
         ),
         'Illuminate\\' => 
         array (
@@ -283,6 +303,10 @@ class ComposerStaticInit8becec16953380a336b5413dcbf94c51
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
+        ),
+        'Doctrine\\Common\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
         ),
         'DeepCopy\\' => 
         array (
@@ -344,17 +368,14 @@ class ComposerStaticInit8becec16953380a336b5413dcbf94c51
                 0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
             ),
         ),
-        'D' => 
-        array (
-            'Doctrine\\Common\\Inflector\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
-            ),
-        ),
     );
 
     public static $classMap = array (
         'App\\ClassModel' => __DIR__ . '/../..' . '/app/ClassModel.php',
+<<<<<<< HEAD
+=======
+        'App\\ClassModel2' => __DIR__ . '/../..' . '/app/ClassModel2.php',
+>>>>>>> 095dcc717cef40d86793e78db19cc315f1d64534
         'App\\Comment' => __DIR__ . '/../..' . '/app/Comment.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -378,6 +399,7 @@ class ComposerStaticInit8becec16953380a336b5413dcbf94c51
         'App\\Http\\Controllers\\TokenController' => __DIR__ . '/../..' . '/app/Http/Controllers/TokenController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Controllers\\adddevicecontroller' => __DIR__ . '/../..' . '/app/Http/Controllers/adddevicecontroller.php',
+        'App\\Http\\Controllers\\chartController' => __DIR__ . '/../..' . '/app/Http/Controllers/chartController.php',
         'App\\Http\\Controllers\\log' => __DIR__ . '/../..' . '/app/Http/Controllers/log.php',
         'App\\Http\\Controllers\\reservationController' => __DIR__ . '/../..' . '/app/Http/Controllers/reservationController.php',
         'App\\Http\\Controllers\\sentNotification' => __DIR__ . '/../..' . '/app/Http/Controllers/sentNotification.php',
@@ -403,10 +425,15 @@ class ComposerStaticInit8becec16953380a336b5413dcbf94c51
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\DynamicClassname' => __DIR__ . '/../..' . '/app/Providers/DynamicClassname.php',
+<<<<<<< HEAD
+=======
+        'App\\Providers\\DynamicClassname2' => __DIR__ . '/../..' . '/app/Providers/DynamicClassname2.php',
+>>>>>>> 095dcc717cef40d86793e78db19cc315f1d64534
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
-        'App\\device' => __DIR__ . '/../..' . '/app/device.php',
+        'App\\device' => __DIR__ . '/../..' . '/app/Http/device.php',
+        'App\\devices' => __DIR__ . '/../..' . '/app/devices.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
@@ -1851,6 +1878,11 @@ class ComposerStaticInit8becec16953380a336b5413dcbf94c51
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+<<<<<<< HEAD
+=======
+        'Jenssegers\\Date\\Date' => __DIR__ . '/..' . '/jenssegers/date/src/Date.php',
+        'Jenssegers\\Date\\DateServiceProvider' => __DIR__ . '/..' . '/jenssegers/date/src/DateServiceProvider.php',
+>>>>>>> 095dcc717cef40d86793e78db19cc315f1d64534
         'Laravel\\Socialite\\AbstractUser' => __DIR__ . '/..' . '/laravel/socialite/src/AbstractUser.php',
         'Laravel\\Socialite\\Contracts\\Factory' => __DIR__ . '/..' . '/laravel/socialite/src/Contracts/Factory.php',
         'Laravel\\Socialite\\Contracts\\Provider' => __DIR__ . '/..' . '/laravel/socialite/src/Contracts/Provider.php',
@@ -3211,7 +3243,6 @@ class ComposerStaticInit8becec16953380a336b5413dcbf94c51
         'Symfony\\Component\\Debug\\FatalErrorHandler\\FatalErrorHandlerInterface' => __DIR__ . '/..' . '/symfony/debug/FatalErrorHandler/FatalErrorHandlerInterface.php',
         'Symfony\\Component\\Debug\\FatalErrorHandler\\UndefinedFunctionFatalErrorHandler' => __DIR__ . '/..' . '/symfony/debug/FatalErrorHandler/UndefinedFunctionFatalErrorHandler.php',
         'Symfony\\Component\\Debug\\FatalErrorHandler\\UndefinedMethodFatalErrorHandler' => __DIR__ . '/..' . '/symfony/debug/FatalErrorHandler/UndefinedMethodFatalErrorHandler.php',
-        'Symfony\\Component\\EventDispatcher\\ContainerAwareEventDispatcher' => __DIR__ . '/..' . '/symfony/event-dispatcher/ContainerAwareEventDispatcher.php',
         'Symfony\\Component\\EventDispatcher\\Debug\\TraceableEventDispatcher' => __DIR__ . '/..' . '/symfony/event-dispatcher/Debug/TraceableEventDispatcher.php',
         'Symfony\\Component\\EventDispatcher\\Debug\\TraceableEventDispatcherInterface' => __DIR__ . '/..' . '/symfony/event-dispatcher/Debug/TraceableEventDispatcherInterface.php',
         'Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener' => __DIR__ . '/..' . '/symfony/event-dispatcher/Debug/WrappedListener.php',
@@ -3640,7 +3671,9 @@ class ComposerStaticInit8becec16953380a336b5413dcbf94c51
         'Symfony\\Polyfill\\Util\\Binary' => __DIR__ . '/..' . '/symfony/polyfill-util/Binary.php',
         'Symfony\\Polyfill\\Util\\BinaryNoFuncOverload' => __DIR__ . '/..' . '/symfony/polyfill-util/BinaryNoFuncOverload.php',
         'Symfony\\Polyfill\\Util\\BinaryOnFuncOverload' => __DIR__ . '/..' . '/symfony/polyfill-util/BinaryOnFuncOverload.php',
+        'Symfony\\Polyfill\\Util\\LegacyTestListener' => __DIR__ . '/..' . '/symfony/polyfill-util/LegacyTestListener.php',
         'Symfony\\Polyfill\\Util\\TestListener' => __DIR__ . '/..' . '/symfony/polyfill-util/TestListener.php',
+        'Symfony\\Polyfill\\Util\\TestListenerTrait' => __DIR__ . '/..' . '/symfony/polyfill-util/TestListenerTrait.php',
         'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
         'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
@@ -3772,10 +3805,10 @@ class ComposerStaticInit8becec16953380a336b5413dcbf94c51
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit8becec16953380a336b5413dcbf94c51::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit8becec16953380a336b5413dcbf94c51::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit8becec16953380a336b5413dcbf94c51::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit8becec16953380a336b5413dcbf94c51::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit4e6ecc4e4a28ca7d78a7837f5a8b99c1::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit4e6ecc4e4a28ca7d78a7837f5a8b99c1::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit4e6ecc4e4a28ca7d78a7837f5a8b99c1::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit4e6ecc4e4a28ca7d78a7837f5a8b99c1::$classMap;
 
         }, null, ClassLoader::class);
     }

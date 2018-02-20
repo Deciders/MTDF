@@ -7,6 +7,10 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\ClassModel' => $baseDir . '/app/ClassModel.php',
+<<<<<<< HEAD
+=======
+    'App\\ClassModel2' => $baseDir . '/app/ClassModel2.php',
+>>>>>>> 095dcc717cef40d86793e78db19cc315f1d64534
     'App\\Comment' => $baseDir . '/app/Comment.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
@@ -30,6 +34,7 @@ return array(
     'App\\Http\\Controllers\\TokenController' => $baseDir . '/app/Http/Controllers/TokenController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
     'App\\Http\\Controllers\\adddevicecontroller' => $baseDir . '/app/Http/Controllers/adddevicecontroller.php',
+    'App\\Http\\Controllers\\chartController' => $baseDir . '/app/Http/Controllers/chartController.php',
     'App\\Http\\Controllers\\log' => $baseDir . '/app/Http/Controllers/log.php',
     'App\\Http\\Controllers\\reservationController' => $baseDir . '/app/Http/Controllers/reservationController.php',
     'App\\Http\\Controllers\\sentNotification' => $baseDir . '/app/Http/Controllers/sentNotification.php',
@@ -55,10 +60,15 @@ return array(
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
     'App\\Providers\\DynamicClassname' => $baseDir . '/app/Providers/DynamicClassname.php',
+<<<<<<< HEAD
+=======
+    'App\\Providers\\DynamicClassname2' => $baseDir . '/app/Providers/DynamicClassname2.php',
+>>>>>>> 095dcc717cef40d86793e78db19cc315f1d64534
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\User' => $baseDir . '/app/User.php',
-    'App\\device' => $baseDir . '/app/device.php',
+    'App\\device' => $baseDir . '/app/Http/device.php',
+    'App\\devices' => $baseDir . '/app/devices.php',
     'ArithmeticError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
     'AssertionError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
@@ -1503,6 +1513,11 @@ return array(
     'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => $vendorDir . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
     'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => $vendorDir . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
     'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => $vendorDir . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+<<<<<<< HEAD
+=======
+    'Jenssegers\\Date\\Date' => $vendorDir . '/jenssegers/date/src/Date.php',
+    'Jenssegers\\Date\\DateServiceProvider' => $vendorDir . '/jenssegers/date/src/DateServiceProvider.php',
+>>>>>>> 095dcc717cef40d86793e78db19cc315f1d64534
     'Laravel\\Socialite\\AbstractUser' => $vendorDir . '/laravel/socialite/src/AbstractUser.php',
     'Laravel\\Socialite\\Contracts\\Factory' => $vendorDir . '/laravel/socialite/src/Contracts/Factory.php',
     'Laravel\\Socialite\\Contracts\\Provider' => $vendorDir . '/laravel/socialite/src/Contracts/Provider.php',
@@ -2863,7 +2878,6 @@ return array(
     'Symfony\\Component\\Debug\\FatalErrorHandler\\FatalErrorHandlerInterface' => $vendorDir . '/symfony/debug/FatalErrorHandler/FatalErrorHandlerInterface.php',
     'Symfony\\Component\\Debug\\FatalErrorHandler\\UndefinedFunctionFatalErrorHandler' => $vendorDir . '/symfony/debug/FatalErrorHandler/UndefinedFunctionFatalErrorHandler.php',
     'Symfony\\Component\\Debug\\FatalErrorHandler\\UndefinedMethodFatalErrorHandler' => $vendorDir . '/symfony/debug/FatalErrorHandler/UndefinedMethodFatalErrorHandler.php',
-    'Symfony\\Component\\EventDispatcher\\ContainerAwareEventDispatcher' => $vendorDir . '/symfony/event-dispatcher/ContainerAwareEventDispatcher.php',
     'Symfony\\Component\\EventDispatcher\\Debug\\TraceableEventDispatcher' => $vendorDir . '/symfony/event-dispatcher/Debug/TraceableEventDispatcher.php',
     'Symfony\\Component\\EventDispatcher\\Debug\\TraceableEventDispatcherInterface' => $vendorDir . '/symfony/event-dispatcher/Debug/TraceableEventDispatcherInterface.php',
     'Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener' => $vendorDir . '/symfony/event-dispatcher/Debug/WrappedListener.php',
@@ -3292,7 +3306,9 @@ return array(
     'Symfony\\Polyfill\\Util\\Binary' => $vendorDir . '/symfony/polyfill-util/Binary.php',
     'Symfony\\Polyfill\\Util\\BinaryNoFuncOverload' => $vendorDir . '/symfony/polyfill-util/BinaryNoFuncOverload.php',
     'Symfony\\Polyfill\\Util\\BinaryOnFuncOverload' => $vendorDir . '/symfony/polyfill-util/BinaryOnFuncOverload.php',
+    'Symfony\\Polyfill\\Util\\LegacyTestListener' => $vendorDir . '/symfony/polyfill-util/LegacyTestListener.php',
     'Symfony\\Polyfill\\Util\\TestListener' => $vendorDir . '/symfony/polyfill-util/TestListener.php',
+    'Symfony\\Polyfill\\Util\\TestListenerTrait' => $vendorDir . '/symfony/polyfill-util/TestListenerTrait.php',
     'Tests\\CreatesApplication' => $baseDir . '/tests/CreatesApplication.php',
     'Tests\\Feature\\ExampleTest' => $baseDir . '/tests/Feature/ExampleTest.php',
     'Tests\\TestCase' => $baseDir . '/tests/TestCase.php',

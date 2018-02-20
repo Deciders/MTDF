@@ -341,6 +341,7 @@ class Inline
             } elseif (Parser::preg_match('/^(.'.($legacyOmittedKeySupport ? '+' : '*').'?)('.implode('|', $delimiters).')/', substr($scalar, $i), $match)) {
                 $output = $match[1];
                 $i += strlen($output);
+                $output = trim($output);
             } else {
                 throw new ParseException(sprintf('Malformed inline YAML string: %s.', $scalar), self::$parsedLineNumber + 1, null, self::$parsedFilename);
             }

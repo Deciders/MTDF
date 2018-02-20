@@ -1718,6 +1718,10 @@ YAML
 - !quz {foo: bar, quz: !bar {one: bar}}
 YAML
             ),
+            'spaces-around-tag-value-in-sequence' => array(
+                array(new TaggedValue('foo', 'bar')),
+                '[ !foo bar ]',
+            ),
         );
     }
 
