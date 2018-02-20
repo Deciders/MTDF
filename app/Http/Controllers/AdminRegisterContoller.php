@@ -18,8 +18,8 @@ class AdminRegisterContoller extends Controller
 {
     public function register(Request $request){
 
-        $this->validation($request);
-        $user = User::create([
+       // $this->validation($request);
+        $user =User::create([
             'name' => $request['name'],
             'last_name' => $request['last_name'],
             'email' => $request['email'],
@@ -46,22 +46,12 @@ class AdminRegisterContoller extends Controller
 
     public function validation($request)
 
-
-    {
-
-        $this->validate($request,[
+    { return $this->validate($request,[
         'name' => 'required|max:255',
         'last_name' =>'required|max:255',
         'email' => 'required|max:255|unique:users',
         'password' => 'required|max:255|confirmed',
     ]);
-
-
-    }
-
-    public function sendEmail($thisUser){
-
-        Mail::to($thisUser['email'])->send(new verifyeEmail($thisUser));
 
     }
 }

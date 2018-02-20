@@ -26,7 +26,7 @@ class DeviceTypeController extends Controller
         $item->	screen_resolution = $request->input('screen_resolution');
         $item->	description = $request->input('description');
         $item->	os = $request->input('os');
-        $item->	imgurl = $request->input('imgurl');
+        $item->	os = $request->input('imgurl');
         $item->save();
 
 

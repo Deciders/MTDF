@@ -23,14 +23,14 @@
   <div class="form-group">
     <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Mobile version</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="version" placeholder="Type Mobile version">
+      <input type="text" class="form-control" name="version" placeholder="Type Mobile version" required />
     </div>
   </div>
 
    <div class="form-group">
     <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Device Name</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="name" placeholder="Type Device Name">
+      <input type="text" class="form-control" name="name" placeholder="Type Device Name" required />
     </div>
   </div>
 
@@ -48,36 +48,31 @@
    <div class="form-group">
     <label  class="col-sm-6 control-label" style="color:#D7DBDD;">RAM Size</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="ram" placeholder="Type RAM Size">
+      <input type="text" class="form-control" name="ram" placeholder="Type RAM Size" required />
     </div>
   </div>
 
    <div class="form-group">
     <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Memory Size</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name="memory" placeholder="Type Memory Size">
+      <input type="text" class="form-control" name="memory" placeholder="Type Memory Size" required />
     </div>
   </div>
 
   <div class="form-group">
     <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Screen Resalution</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="screen_resolution" placeholder="Type Mobile Screen Resalution">
+      <input type="text" class="form-control" name="screen_resolution" placeholder="Type Mobile Screen Resalution" required />
     </div>
   </div>
 
    <div class="form-group">
-    <label  class="col-sm-8 control-label" style="color:#D7DBDD;">Description About the Divice</label>
+    <label  class="col-sm-8 control-label" style="color:#D7DBDD;">Description About the Diviec</label>
     <div class="col-sm-10">
-    	 <textarea rows="4" cols="10" name="description" class="form-control" placeholder="Write something.."></textarea>
+    	 <textarea rows="4" cols="10" name="description" class="form-control" placeholder="Write something.." required /></textarea>
     </div>
   </div>
-       <div class="form-group">
-           <label  class="col-sm-8 control-label" style="color:#D7DBDD;">URL for image</label>
-           <div class="col-sm-10">
-               <textarea rows="4" cols="10" name="imgurl" class="form-control" placeholder="Write something.."></textarea>
-           </div>
-       </div>
+
    
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
@@ -85,11 +80,11 @@
     </div>
   </div>
 
-    <div class="form-group">
+   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
   <input type="reset" value="Clear" class="btn btn-success" />
   </div>
-  </div> </span>
+  </div>
 
 </div>
 </div>
@@ -140,29 +135,29 @@
    <div class="form-group">
     <label  class="col-sm-8 control-label" style="color:#D7DBDD;">Mac Address</label>
     <div class="col-sm-10">
-     <input type="text" class="form-control" name="macAddres" placeholder="Type A Mac Address">
+     <input type="text" class="form-control" name="macAddres" placeholder="Type A Mac Address" required />
     </div>
   </div>
 
   <div class="form-group">
     <label  class="col-sm-8 control-label" style="color:#D7DBDD;">State</label>
     <div class="col-sm-10">
-     <input type="text" class="form-control" name="state" placeholder="Type Device State">
+     <input type="text" class="form-control" name="state" placeholder="Type Device State" required />
     </div>
   </div>
 
 
-        <div class="form-group">
-            <label  class="col-sm-8 control-label" style="color:#D7DBDD;">Name</label>
+       <!--  <div class="form-group">
+            <label  class="col-sm-8 control-label" style="color:#D7DBDD;">Image</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="name" placeholder="Type Device name">
+                <input type="text" class="form-control" name="imag" placeholder="Past Image Url">
             </div>
         </div>
-
+ -->
     <div class="form-group">
     <label  class="col-sm-6 control-label" style="color:#D7DBDD;">Added Date</label>
     <div class="col-sm-8">
-      <input type="date"  class="form-control" name="date">
+      <input type="date"  class="form-control" name="date" required />
     </div>
   </div>
 
@@ -174,11 +169,11 @@
     </div>
   </div>
 
-    <div class="form-group">
+   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
   <input type="reset" value="Clear" class="btn btn-success" />
   </div>
-  </div> </span>
+  </div>
 
 
       <!-- <div class="container" style="background-color:#f1f1f1">
@@ -252,8 +247,8 @@ window.onclick = function(event) {
       "device_type_id":from.device_type_id.value,
       "macAddres":from.macAddres.value,
       "state":from.state.value,
-      "name":from.name.value,
-      "date":from.ram.value,
+      "imag":from.imag.value,
+      "added_date":from.date.value,
     );
     var html=JSON.stringify(json,0.4);
     document.getElementById("output").innerHTML=html;
