@@ -72,27 +72,17 @@ class LoginController extends Controller
     {
         $fbuser = Socialite::driver('facebook')->user();
 
-
-        $findUser =User::where('email',$fbuser->email)->first();
-        if($findUser){
-            Auth::login( $findUser);
-            return redirect()->route('home');
-        }else{
-            //return $user->name;
-            $user = new User;
-            $user->name=$fbuser->name;
-            $user->email=$fbuser->email;
-            $user->last_name='FB user';
-            $user->password=bcrypt('123456');
-            $user->Isadmin=0;
-            $user->state=1;
-            $user->save();
-            Auth::login($user);
-            return redirect()->route('home');
-
-
-        }
-
+         //return $user->name;
+        $user = new User;
+        $user->name=$fbuser->name;
+        $user->email=$fbuser->email;
+        $user->last_name='FB user';
+        $user->password=bcrypt('123456');
+        $user->Isadmin=0;
+        $user->state=1;
+        $user->save();
+        Auth::login($user);
+        return redirect()->route('home');
 
 
     }

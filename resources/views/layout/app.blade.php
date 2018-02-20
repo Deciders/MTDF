@@ -190,10 +190,11 @@
      <li class="nav-item">
       <!-- <a class="nav-link" href="admin/create">ADD </a> -->
       <a class="nav-link" href="admin/create" style="cursor: pointer;">ADD </a>
-     </li>
+
+    </li>
 
      <li class="nav-item">
-      <a class="nav-link" id="myBtn" href="admin/mychart" style="cursor: pointer;">REPORT</a>
+      <p class="nav-link" id="myBtn" style="cursor: pointer;">REPORT</p>
     </li>
   
   </ul>
@@ -222,17 +223,7 @@
 
       <a class="dropdown-item" href="#">View Profile</a>
 
-      <div class="dropdown-item">
-        <a class="dropdown-item" href="{{ route('logout') }}"
-           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-          Logout
-        </a>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-          {{ csrf_field() }}
-        </form>
-
-      </div>
+      <a class="dropdown-item" href="{{ route('logout') }}"> Log Out</a>
     </div>
 
 

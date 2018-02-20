@@ -206,5 +206,10 @@ return [
         'JWTAuth'   =>Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' =>Tymon\JWTAuth\Facades\JWTFactory::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 095dcc717cef40d86793e78db19cc315f1d64534
     ],
 ];

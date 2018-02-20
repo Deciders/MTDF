@@ -46,12 +46,11 @@ class AdminController extends DeviceTypeController
           $item->	screen_resolution = $request->input('screen_resolution');
           $item->	description = $request->input('description');
           $item->	os = $request->input('os');
-        $item->	imgurl = $request->input('imgurl');
           $item->save();
            $thisDevice = DeviceType::findOrFail($item->id);
            $this->sendEmail($thisDevice);
 
-           return redirect('admin/admin/create');
+           return redirect('admin');
     }
 
   // Sent Email When Device type Is Created
@@ -70,9 +69,9 @@ class AdminController extends DeviceTypeController
         $dtype = Device::create([
             'device_type_id'=>$request->input('device_type_id'),
             'id'=>$request->input('id'),
-            'added_date' => $request->input('date'),
+            'added_date' => $request->input('added_date'),
             'state' => $request->input('state'),
-            'name' => $request->input('name'),
+            'imag' => $request->input('imag'),
             'macAddres' => $request->input('macAddres'),
             'availability' => 1,
 
@@ -91,8 +90,5 @@ class AdminController extends DeviceTypeController
         session()->flash('message','Delete Successfully'); 
         return redirect('/admin');
     }
-
     
-     
-     
 }

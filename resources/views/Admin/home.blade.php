@@ -61,7 +61,6 @@
 </head>
 
 
-    
 <table id="myTable" style="text-align:center;" >
 	<tr>
 		<th>Version</th>
@@ -70,10 +69,9 @@
 		<th>Os</th>
 		<th>Memory</th>
 		<th>Created at</th>
-    <th>View Device</th>
 		<th>Delete</th>
 	</tr>
-
+    
 @foreach($allItems as $divs)
 
 
@@ -85,28 +83,13 @@
 		<td>{{$divs->os}}</td>
 		<td>{{$divs->memory}}</td>
 		<td>{{$divs->created_at }}</td>
-    
-
-     
-     
-     
-     
-      <td>
-
-      <center><button id="{{$divs->id}}" type="submit" class="btn btn-info"  onclick="openSearch(this.id)">View Device</button>
-      </td>
-
-      
    <!--  <td>{{$divs->created_at->diffForHumans()}}</td> -->
-		  
-      <td><form action="{{'/admin/'.$divs->id}}" method="post">
+		<td><form action="{{'/admin/'.$divs->id}}" method="post">
 			{{csrf_field()}}
 			{{ method_field('DELETE')}}
-			<center><button  type="submit" style="color: red;" ><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></button></center></form></td>
-
+			<center><button type="submit" style="color: red;" ><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></button></center></form></td>
 			
 	</tr>
-
 
 @endforeach
 
@@ -203,10 +186,13 @@
     <div class="col-sm-offset-2 col-sm-10">
   <input type="reset" value="Clear" class="btn btn-success" />
   </div>
-  </div>
+  </div> 
 
  </form>
 
+
+
+
 </div>
 </center>
 </div>
@@ -214,63 +200,6 @@
 </div>
 </div>
 </div>
-
-<div id="myOverlay" class="overlay" style="background: #AAB7B8;">
-  <span class="close" onclick="closeSearch()" title="Close Overlay">×</span>
- <div class="form-group">
-   <center><h1 style="color: #2C3E50;">DEVICE DETAILS</h1></center>
-
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-   <input type="text" id="myInput" onkeyup="myFunction2()" placeholder="Search for version.." title="Type in a name">
-   </nav>
-
- <div class="center" style="border: none;">
-<table id="myTable" style="text-align:center;" >
-  <tr>
-    <th>Mac Addres</th>
-    <th>Delete</th>
-  </tr>
-
-
-@foreach ($classname2_array as $data)
-
- @if($data->device_type_id==1)
-
- {
-  <tr>
-  <td>{{ $data->macAddres }}</td>
-      <td><form action="{{'/admin/'.$divs->id}}" method="post">
-      {{csrf_field()}}
-      {{ method_field('DELETE')}}
-      <center><button  type="submit" style="color: red;" ><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></button></center></form></td></tr>
-
-
-   }
-
-
-
-@else{
-
-
-}
-@endif
-
-@endforeach
-
-  </table>
-</div>
-  </div>
-</center>
-
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-
-
 
 
 
@@ -389,52 +318,6 @@ function myFunction() {
   }
 </script>
 
-
-
-<script>
-function openSearch(clicked_id) {
-alert(clicked_id);
-document.getElementById("myOverlay").style.display = "block";
-       function getMessage(){
-             $.ajax({
-                type:'POST',
-                url:'/getmsg?id=clicked_id',
-                data:'_token = <?php echo csrf_token() ?>',
-                success:function(data){
-                   $("#myOverlay").html(data.msg);
-                }
-             });
-          }
- }
-
-function closeSearch() {
-    document.getElementById("myOverlay").style.display = "none";
-}
-</script>
-
-
-
- <script type="text/javascript">
-            
-function myFunction2() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable2");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
-}
-
-        </script>
 
 
 
