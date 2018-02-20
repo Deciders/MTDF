@@ -52,9 +52,7 @@ Route::post('admin/deviceType/create','DeviceTypeController@createDeviceType');
 Route::resource('admin','AdminController');
 Route::post('admin/admin/device','AdminController@storedevice');
 Route::post('admin/admin','AdminController@store');
-<<<<<<< HEAD
 
-=======
 
 // Redirect route for admin dashbord
 
@@ -66,7 +64,6 @@ Route::get('admin/admin/create', function () {
 
     return redirect('admin/create');
  });
->>>>>>> 095dcc717cef40d86793e78db19cc315f1d64534
 
 
 Route::get('/deviceType/get','DeviceTypeController@getDeviceType');

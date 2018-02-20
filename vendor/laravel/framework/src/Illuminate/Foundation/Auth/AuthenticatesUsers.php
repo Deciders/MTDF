@@ -16,7 +16,7 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
-        return view('auth.login');
+        return view('clogin');
     }
 
     /**
@@ -59,8 +59,7 @@ trait AuthenticatesUsers
     protected function validateLogin(Request $request)
     {
         $this->validate($request, [
-            $this->username() => 'required|string',
-            'password' => 'required|string',
+            $this->username() => 'required|string','password' => 'required|string',
         ]);
     }
 
@@ -153,7 +152,7 @@ trait AuthenticatesUsers
      */
     public function logout(Request $request)
     {
-        $this->guard()->logout();
+       $this->guard()->logout();
 
         $request->session()->invalidate();
 

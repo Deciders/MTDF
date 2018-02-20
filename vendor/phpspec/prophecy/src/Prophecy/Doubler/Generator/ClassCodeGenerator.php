@@ -114,15 +114,6 @@ class ClassCodeGenerator
                         $php .= '\\'.$hint;
                         break;
 
-                    case 'object':
-                        if (version_compare(PHP_VERSION, '7.2', '>=')) {
-                            $php .= $hint;
-                            break;
-                        }
-
-                        $php .= '\\'.$hint;
-                        break;
-
                     case 'string':
                     case 'int':
                     case 'float':
