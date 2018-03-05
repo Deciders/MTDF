@@ -20,7 +20,7 @@ Route::get('/', function () {
 //...............User Dashbord Controllers.............................//
 Route::get('user/showDevice','UserController@showDevice');
 Route::get('user/reservation','UserController@reservation');
-
+Route::get('/book/{id}','UserController@book');
 //...................... If user redirect to user page...................//
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -45,7 +45,7 @@ Route::get('change/{email}/{verifiyToken}','AdminRegisterContoller@sendEmailDone
 Route::resource('reservation','reservationController');
 //Route::get('/authname', 'reservationController@index');
 
-Route::post('admin/deviceType/create','DeviceTypeController@createDeviceType');
+Route::post('admin/deviceType.blade.php/create','DeviceTypeController@createDeviceType');
 
 // Admin DashBoard routes
 
@@ -66,7 +66,7 @@ Route::get('admin/admin/create', function () {
  });
 
 
-Route::get('/deviceType/get','DeviceTypeController@getDeviceType');
+Route::get('/deviceType.blade.php/get','DeviceTypeController@getDeviceType');
 
 //'''''''''''''''facebook login routes'''''''''''''''''''//
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook');

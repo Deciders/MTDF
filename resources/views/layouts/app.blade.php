@@ -13,9 +13,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body background="https://i.imgur.com/Nbi7bYI.jpg">
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-static-top" background="https://i.imgur.com/Nbi7bYI.jpg">
             <div class="container">
                 <div class="navbar-header">
 

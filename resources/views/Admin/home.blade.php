@@ -89,7 +89,7 @@
 			{{ method_field('DELETE')}}
 			<center><button type="submit" style="color: red;" ><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></button></center></form></td>
 			
-	</tr>
+	     </tr>
 
 @endforeach
 

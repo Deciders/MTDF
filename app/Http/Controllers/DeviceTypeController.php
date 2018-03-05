@@ -18,7 +18,7 @@ class DeviceTypeController extends Controller
 
 
 
-      $item = new DeviceType();
+        $item = new DeviceType();
         $item->name = $request->input('name');
         $item->ram = $request->input('ram');
         $item->version = $request->input('version');
@@ -26,10 +26,8 @@ class DeviceTypeController extends Controller
         $item->	screen_resolution = $request->input('screen_resolution');
         $item->	description = $request->input('description');
         $item->	os = $request->input('os');
-        $item->	os = $request->input('imgurl');
+        $item->imgurl= $request->input('imag');
         $item->save();
-
-
         $thisDevice = DeviceType::findOrFail($item->id);
         $this->sendEmail($thisDevice);
 

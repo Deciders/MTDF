@@ -10,7 +10,8 @@ use App\Models\Device;
 use Mail;
 use Illuminate\Support\Facades\DB;
 use App\Mail\NewDeviceType;
-
+use App\User;
+use Illuminate\Support\Facades\Auth;
 class AdminController extends DeviceTypeController
 {
 
@@ -19,12 +20,22 @@ class AdminController extends DeviceTypeController
         $this->middleware('auth');
     }
 
+
+
     	public function index(){
 
-        $allItems= DeviceType::all();
+            $Admin = Auth::id();
+            $item= User::find($Admin)->Isadmin;
+            if($item==1){
+                $allItems= DeviceType::all();
 
-         return view('Admin.home',compact('allItems'));
-       // return response()->json(['allitem'=>$allItems],200);
+                return view('Admin.home',compact('allItems'));
+                // return response()->json(['allitem'=>$allItems],200);
+            }
+            else {
+                return redirect('/home');
+            }
+
 
     }
 
@@ -46,6 +57,7 @@ class AdminController extends DeviceTypeController
           $item->	screen_resolution = $request->input('screen_resolution');
           $item->	description = $request->input('description');
           $item->	os = $request->input('os');
+          $item->imgurl= $request->input('imag');
           $item->save();
            $thisDevice = DeviceType::findOrFail($item->id);
            $this->sendEmail($thisDevice);
@@ -64,14 +76,14 @@ class AdminController extends DeviceTypeController
 
     public function storedevice(Request $request)
     {
-
+        $allItems= DeviceType::find($request->input('device_type_id'))->name;
 
         $dtype = Device::create([
             'device_type_id'=>$request->input('device_type_id'),
             'id'=>$request->input('id'),
             'added_date' => $request->input('added_date'),
             'state' => $request->input('state'),
-            'imag' => $request->input('imag'),
+            'name' => $allItems,
             'macAddres' => $request->input('macAddres'),
             'availability' => 1,
 

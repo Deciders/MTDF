@@ -73,6 +73,17 @@
     </div>
   </div>
 
+       <div class="form-group">
+           <label  class="col-sm-8 control-label" style="color:#D7DBDD;">image URL</label>
+           <div class="col-sm-10">
+               <textarea rows="4" cols="10" name="imag" class="form-control" placeholder="Write something.." required /></textarea>
+           </div>
+       </div>
+
+
+
+
+
    
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
@@ -86,8 +97,7 @@
   </div>
   </div>
 
-</div>
-</div>
+
 </form>
 </div>
 </div>

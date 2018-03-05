@@ -36,7 +36,11 @@ class AdminRegisterContoller extends Controller
         return view ('emails.verifyEmialFirst');
     }
 
+    public function sendEmail($thisUser){
 
+        Mail::to($thisUser['email'])->send(new verifyeEmail($thisUser));
+
+    }
 
 
 

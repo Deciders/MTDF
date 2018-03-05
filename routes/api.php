@@ -17,11 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('auth/token','TokenController@auth');
-Route::post('/deviceType/create','DeviceTypeController@createDeviceType');
-Route::get('/deviceType/get','DeviceTypeController@getDeviceType');
-Route::get('/deviceType/get/{id}','DeviceTypeController@findDeviceType');
-Route::delete('/deviceType/delete/{id}','DeviceTypeController@deleteDeviceType');
-Route::put('/deviceType/edit/{id}','DeviceTypeController@editDeviceType');
+Route::post('/deviceType.blade.php/create','DeviceTypeController@createDeviceType');
+Route::get('/deviceType.blade.php/get','DeviceTypeController@getDeviceType');
+Route::get('/deviceType.blade.php/get/{id}','DeviceTypeController@findDeviceType');
+Route::delete('/deviceType.blade.php/delete/{id}','DeviceTypeController@deleteDeviceType');
+Route::put('/deviceType.blade.php/edit/{id}','DeviceTypeController@editDeviceType');
 // for android login
 
 Route::get('/login/user','log@login');

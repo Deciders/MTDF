@@ -7,6 +7,7 @@ use\App\Models\Reservation;
 use\App\Models\Device;
 use Illuminate\Support\Facades\Auth;
 use Mockery\Exception;
+use Illuminate\Support\Facades\DB;
 
 
 class reservationController extends Controller
@@ -47,22 +48,16 @@ class reservationController extends Controller
     {
 
 
-       // $id=Auth::id();
-
-//        if (Auth::check()) {
-//
-//            return response()->json(['message'=>'log in'],201);
-//        }
-
-
                 $dtype = Reservation::create([
+
                     'start_date'=>$request->input('start_date'),
                     'end_date'=>$request->input('end_date'),
                     'device_id' => $request->input('device_id'),
-                    'user_id'=>10,
+                    'user_id'=>  Auth::id(),
+                    // $user = DB::table('devices')->where('device_type_id',$request->input('device_id') )->first(),
 
                     $item= Device::find($request->input('device_id')),
-                    $item->availability =$request->input('availability'),
+                    $item->availability =0,
                     $item->save()
                 ]);
 

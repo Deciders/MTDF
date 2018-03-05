@@ -13,6 +13,6 @@ class Device extends Model
     //many to one relationship with DataType
     public function deviceType()
     {
-        return $this->belongsTo('App\Models\DeviceType');
+        return $this->belongsTo('App\Models\DeviceType','device_type_id');
     }
 }

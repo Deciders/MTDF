@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Device;
 use Illuminate\Support\Facades\DB;
+use App\Models\DeviceType;
 class DeviceController extends Controller
 {
     /**
@@ -36,12 +37,14 @@ class DeviceController extends Controller
      */
     public function store(Request $request)
     {
+
+        $dname= DeviceType::find($request->input('device_type_id'))->name;
         $dtype = Device::create([
             'device_type_id'=>$request->input('device_type_id'),
             'id'=>$request->input('id'),
             'added_date' => $request->input('date'),
             'state' => $request->input('state'),
-             'name' => $request->input('name'),
+            'name' => $dname,
             'macAddres' => $request->input('macAddres'),
             'availability' => 1,
 
